@@ -1,10 +1,10 @@
 import { PROFILE_BG, PROFILE_IMG, TICKED } from "../utils/constants";
-import ShimmerCard from "./ShimmerCard";
+import ShimmerList from "../shimmer/ShimmerList";
 
 const Card = ({ info }) => {
 
   if (!info) {
-    return <ShimmerCard />
+    return <ShimmerList />
   }
 
   return (

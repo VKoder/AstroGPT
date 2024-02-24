@@ -22,16 +22,32 @@
   background: #d6d6d6;
 }
 .animate {
-  animation: shimmer 3s;
-  animation-iteration-count: infinite;
-  background: linear-gradient(to right, #b9b9b9 5%, #919191 25%, #b2b2b2 35%);
+  animation: shimmer 3s infinite;
+  background: linear-gradient(to right, #A0A0A0 5%, #B0B0B0 25%, #A0A0A0 35%);
   background-size: 1000px 100%;
 }
+
+
 @keyframes shimmer {
   from {
     background-position: -1000px 0;
   }
   to {
     background-position: 1000px 0;
+  }
+}
+.hand {
+  animation-name: hand;
+  animation-duration: 20s; /* Adjust duration as needed */
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out; /* Adjust timing function as needed */
+}
+
+@keyframes hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

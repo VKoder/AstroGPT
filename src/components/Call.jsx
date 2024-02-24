@@ -1,28 +1,26 @@
 import Header from "./Header";
 import {  useSelector } from "react-redux";
 import CardContainer from "./CardContainer";
-import ShimmerCard from "./ShimmerCard";
+import ShimmerList from "../shimmer/ShimmerList";
 import useCall from "../custom hooks/useCall";
 import { useState } from "react";
 
 const Call = () => {
-    const [search, setSearch] = useState(""); // State for search input
-    const [mainCallList, setMainCallList] = useState(null); // State for main list
+    const [search, setSearch] = useState(""); 
+    const [mainCallList, setMainCallList] = useState(null); 
 
-
-    useCall(); // Not sure what this does, assuming it's correct
-
+    useCall();
     const callList = useSelector(store => store.astro.callList);
 
-    if (!callList) return <ShimmerCard/>;
+    if (!callList) return <ShimmerList/>;
 
 
-    // Function to handle search input change
+
     const handleSearch = (e) => {
         const searchTerm = e.target.value.toLowerCase();
         setSearch(searchTerm);
         
-        // Filter the original callList based on the search term and update mainCallList
+       
         const filteredList = callList.filter(name => name.slug.toLowerCase().includes(searchTerm));
         setMainCallList(filteredList);
       
@@ -31,7 +29,7 @@ const Call = () => {
     const btnCSS = "border px-4 py-1.5 border-zinc-600 text-zinc-600 font-normal rounded-full cursor-pointer"
     return (
         <div className="bg-[#E6E6FA] h-full w-12/12 overflow-hidden">
-            <Header/>
+          
             <div className="pt-6 px-20 flex flex-col justify-center items-start">
             <div className="w-full flex justify-between items-center">
                 <span className="text-3xl font-bold">Call to Astrologers</span>
@@ -101,7 +99,7 @@ const Call = () => {
 
 
             <div>
-                {/* Render CardContainer with mainCallList */}
+              
                 <CardContainer list={mainCallList || callList} />
             </div>
         </div>
