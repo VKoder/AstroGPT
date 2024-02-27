@@ -6,6 +6,7 @@ import ShimmerList from "../shimmer/ShimmerList";
 // import useComments from "../custom hooks/useComments";
 
 import { PROFILE_BG, PROFILE_IMG } from "../utils/constants";
+import ShimmerProfile from "../shimmer/ShimmerProfile";
 
 const AstroProfile = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const AstroProfile = () => {
   const astroProfile = useSelector((store) => store.astro.astroProfile);
 
   if (!astroProfile) {
-    return <ShimmerList />;
+    return <ShimmerProfile />;
   }
   const { data } = astroProfile;
   console.log(data);
