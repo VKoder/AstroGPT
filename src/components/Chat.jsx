@@ -25,27 +25,27 @@ const Chat = () => {
       
     };
 
-    const btnCSS = "border px-4 py-1.5 border-zinc-600 text-zinc-600 font-normal rounded-full cursor-pointer"
+    const btnCSS = "lg:text-base text-sm border px-2 lg:px-4 py-0.5 lg:py-1.5 border-zinc-600 text-zinc-600 font-normal rounded-full cursor-pointer"
 
     return (
         <div  className="bg-[#E6E6FA] h-full w-12/12">
         
-           <div className="pt-6 px-20 flex flex-col justify-center items-start">
-            <div className="w-full flex justify-between items-center">
-                <span className="text-3xl font-bold">Chat with Astrologers</span>
+           <div className="lg:pt-6 pt-3 px-4 lg:px-20 flex flex-col justify-center items-start">
+            <div className="w-full flex lg:flex-row flex-col justify-between items-start lg:items-center">
+                <span className="text-2xl lg:text-3xl font-bold">Chat with Astrologers</span>
                 <div className="flex py-2 relative items-center">
                     <input 
                         type="text" 
                         placeholder="Search for Astrologers" 
                         value={search} 
                         onChange={handleSearch}
-                        className="border w-80 text-lg rounded-full border-gray-400 pl-9  py-1.5 px-2 "
+                        className="border w-80 text-base lg:text-lg rounded-full border-gray-400 pl-9  py-0.5  lg:py-1.5 px-1 lg:px-2 "
                     ></input>
                     <i className="ri-search-line text-gray-400 absolute text-base left-3"></i>
                 </div>
             </div>
 
-                <div className="flex w-full whitespace-nowrap overflow-x-scroll  no-scrollbar justify-start items-center pt-2 gap-4 flex-row">
+                <div className="flex w-full whitespace-nowrap overflow-x-scroll  no-scrollbar justify-start items-center pt-0.5 lg:pt-2 gap-2 lg:gap-4 flex-row">
                     <span className={btnCSS}><i className="ri-filter-2-line pr-1"></i>Filter</span>
                     <button className={btnCSS} onClick={()=>{
                         setMainchatList(chatList)}

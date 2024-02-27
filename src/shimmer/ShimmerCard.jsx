@@ -2,7 +2,7 @@ import React from "react";
 
 const ShimmerCard = () => {
   return (
-    <div className="h-36 bg-gray-300 w-[30%] rounded-lg px-2 gap-3 py-2 flex flex-row justify-between items-start">
+    <div className="h-36 bg-gray-300 w-[100%] lg:w-[30%] rounded-lg px-2 gap-3 py-2 flex flex-row justify-between items-start">
       <div className="w-4/12 h-full flex justify-center items-center">
         <span className="rounded-full bg-gray-300  w-[90%] h-[70%] stroke animate"></span>
       </div>
