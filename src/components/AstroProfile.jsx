@@ -80,27 +80,27 @@ const AstroProfile = () => {
         }
     </div>
     </div>
-        <div className="rounded-2xl bg-[#F5F5FF] flex flex-col px-10 py-10 border bg- w-full mt-4 my-20">
-          <div className="w-full flex gap-4 flex-col">
-            <span className="text-3xl uppercase  font-bold">
+        <div className="rounded-2xl bg-[#F5F5FF] flex flex-col lg:px-10 px-4 py-4 lg:py-10 border bg- w-full mt-4 my-20">
+          <div className="w-full flex lg:gap-4 gap-1 flex-col">
+            <span className="lg:text-3xl text-2xl uppercase  font-bold">
               About me
-              <span className="text-xl text-purple-400 font-normal pl-2 italic ">
+              <span className="lg:text-xl text-base text-purple-400 font-normal pl-2 italic ">
                 ({data?.shortBio})
               </span>
             </span>
-            <span className="text-lg tracking-wide font-normal text-gray-600">
+            <span className="lg:text-lg text-sm tracking-wide font-normal text-gray-600">
               {data?.longBio}
             </span>
           </div>
-          <div className="py-4">
-            <span className="text-xl  font-bold">Problem Area: </span>
-            <span className="text-lg   px-4 py-2 rounded-3xl italic">
+          <div className="lg:py-4 py-2">
+            <span className="lg:text-xl text-lg  font-bold">Problem Area: </span>
+            <span className="lg:text-lg text-base  lg:px-4 px-2 py-0.5 lg:py-2 rounded-3xl italic">
               {data?.problemArea}
             </span>
           </div>
           <div className="w-full pt-4 gap-4 flex flex-row">
             {data?.album.map((img) => (
-              <div className="rounded-2xl bg-center border-2 shadow-md w-[300px] h-[280px]  overflow-hidden">
+              <div className="rounded-2xl bg-center border-2 shadow-md lg:w-[300px] w-[500px] h-[80px] lg:h-[280px]  overflow-hidden">
                 <img className="w-full" src={img?.url} alt="img"></img>
               </div>
             ))}
