@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import astroReducer from "./AstroSlice"
 import commentReducer from "./CommentsSlice"
-import appReducer from "./appSlice"
+import userReducer from "./userSlice"
+
 
 const appStore = configureStore({
     reducer:{
         astro : astroReducer,
         comment : commentReducer,
-        app: appReducer,
+        user: userReducer,
     }
 })
 export default appStore;

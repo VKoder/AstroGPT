@@ -3,12 +3,13 @@ import Logo from "../image/Logo.png"
 import {  onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "../store/appSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../store/userSlice";
 
 
 const Header = () => {
 
+    const user = useSelector(store => store.user)
     const navigate = useNavigate();
     const liCSS = "font-semibold uppercase tracking-wide text-sm pl-5 cursor-pointer"
     const dispatch = useDispatch()
@@ -41,12 +42,15 @@ const Header = () => {
     return (
         <div className="bg-purple-900 z-100 flex-row flex items-center justify-between w-12/12 px-2 md:px-16 shadow-2xl">
             <div>
-             <Link to={"/"}> <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img></Link>
+            {user ? (<Link to={"/"}> <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img></Link>) : <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img>}
             </div>
             <div className="text-white  hidden md:block">
-                <span className={liCSS}>About</span>
-                <span className={liCSS}>Login</span>
-                <span onClick={handleSignOut}>Signout</span>
+              {user && <><Link to={"/chat"}>  <span className={liCSS}>Chat</span></Link>
+              <Link to={"/call"}>  <span className={liCSS}>Call</span></Link>
+             <span onClick={handleSignOut}>Signout</span></>}
+             {
+                !user && <span>Login</span>
+             }
             </div>
         </div>
     )
