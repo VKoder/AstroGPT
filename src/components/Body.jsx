@@ -4,9 +4,11 @@ import Chat from "./Chat";
 import Call from "./Call";
 import AstroProfile from "./AstroProfile";
 import Header from "./Header";
+import LoginPage from "./Authentication/LoginPage";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
+  
     {
       path: "/",
       element: (
@@ -36,7 +38,11 @@ const Body = () => {
        
         
         
-      },
+    },
+    {
+      path:"/login",
+      element:<LoginPage/>
+    },
    
   ]);
 

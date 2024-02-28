@@ -1,9 +1,6 @@
 import { useSelector } from "react-redux";
 import useAstroProfile from "../custom hooks/useAstroProfile";
 import { useParams } from "react-router-dom";
-import Header from "./Header";
-import ShimmerList from "../shimmer/ShimmerList";
-// import useComments from "../custom hooks/useComments";
 
 import { PROFILE_BG, PROFILE_IMG } from "../utils/constants";
 import ShimmerProfile from "../shimmer/ShimmerProfile";
@@ -23,7 +20,7 @@ const AstroProfile = () => {
   return (
     
      
-      <div className="w-12/12  flex flex-col mx-4 mt-4 lg:mx-16">
+      <div className="w-12/12  flex flex-col mx-4 lg:mx-16">
       
       <div className="flex relative bg-[#F5F5FF]  lg:flex-row flex-col px-8 py-8  gap-12  lg:mt-8 w-full rounded-2xl border">
     <div className="w-full lg:w-3/12  gap-4 flex-col h-full flex justify-center items-start">

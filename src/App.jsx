@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <Provider store={appStore}>
-    <div className='bg-[#E6E6FA]'>
+    <div className='bg-[#353582]'>
     <Body/>
     </div>
     </Provider>

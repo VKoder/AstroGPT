@@ -1,4 +1,3 @@
-import Header from "./Header";
 import useChat from "../custom hooks/useChat";
 import { useSelector } from "react-redux";
 import CardContainer from "./CardContainer";
@@ -39,9 +38,9 @@ const Chat = () => {
                         placeholder="Search for Astrologers" 
                         value={search} 
                         onChange={handleSearch}
-                        className="border w-80 text-base lg:text-lg rounded-full border-gray-400 pl-9  py-0.5  lg:py-1.5 px-1 lg:px-2 "
+                        className="border w-80 text-base lg:text-lg rounded-full border-gray-400 pl-9  py-0.5  lg:py-1.5 px-2"
                     ></input>
-                    <i className="ri-search-line text-gray-400 absolute text-base left-3"></i>
+                    <i className="ri-search-line text-gray-400 absolute text-sm lg:text-base left-3"></i>
                 </div>
             </div>
 
