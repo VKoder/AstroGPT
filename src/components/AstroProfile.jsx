@@ -19,7 +19,7 @@ const AstroProfile = () => {
 
   return (
     
-     
+     <div className="bg-[#E6E6FA]">
       <div className="w-12/12  flex flex-col mx-4 lg:mx-16">
       
       <div className="flex relative bg-[#F5F5FF]  lg:flex-row flex-col px-8 py-8  gap-12  lg:mt-8 w-full rounded-2xl border">
@@ -105,7 +105,7 @@ const AstroProfile = () => {
         </div>
         
       </div>
-   
+      </div>
   );
 };
 export default AstroProfile;

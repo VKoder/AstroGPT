@@ -34,15 +34,16 @@ const Body = () => {
             path: "/astroProfile/:id",
             element: <AstroProfile />,
           },
+          {
+            path:"/login",
+            element:<LoginPage/>
+          },
       ])
        
         
         
     },
-    {
-      path:"/login",
-      element:<LoginPage/>
-    },
+  
    
   ]);
 

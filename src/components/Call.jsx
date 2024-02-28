@@ -4,7 +4,6 @@ import CardContainer from "./CardContainer";
 import ShimmerList from "../shimmer/ShimmerList";
 import useCall from "../custom hooks/useCall";
 import { useState } from "react";
-import Header from "./Header";
 
 const Call = () => {
     const [search, setSearch] = useState(""); 
