@@ -4,7 +4,8 @@ import Chat from "./Chat";
 import Call from "./Call";
 import AstroProfile from "./AstroProfile";
 import Header from "./Header";
-import LoginPage from "./Authentication/LoginPage";
+import LoginPage from "./LoginPage";
+import LoginForm from "./LoginForm";
 
 const Body = () => {
   const appLayout = createBrowserRouter([

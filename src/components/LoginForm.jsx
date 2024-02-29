@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import { checkValidData, checkValidData2 } from "../../utils/validate";
+import { checkValidData, checkValidData2 } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../utils/firebase";
+import { auth } from "../utils/firebase";
 
 
 const LoginForm = () => {
@@ -61,7 +61,7 @@ const LoginForm = () => {
       });
   };
   return (
-    <div className="px-4  py-4 w-full bg-gray-900">
+    <div className="px-4  h-screen py-4 w-full">
       <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
         {signIn ? <h2>Sign In</h2> : <h2>Sign Up</h2>}
         {!signIn && <input type="text" placeholder="Name" ref={name}></input>}

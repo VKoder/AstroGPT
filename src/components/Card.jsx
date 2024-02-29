@@ -66,7 +66,7 @@ const Card = ({ info }) => {
           }
         </div>
         <div className="">
-          <button className="px-5 py-1  rounded-md  text-sm border text-[#9400D3]  border-[#4DA1FF]">
+          <button className="px-5 py-1 hover:bg-purple-500 hover:text-white  rounded-md  text-sm border text-[#9400D3]  border-[#4DA1FF]">
             Chat
           </button>
         </div>
