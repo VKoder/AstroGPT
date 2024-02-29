@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { checkValidData, checkValidData2 } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import {  toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const LoginForm = () => {
@@ -24,7 +26,17 @@ const LoginForm = () => {
     signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
         const user = userCredential.user;
-        
+        toast.success("Login successful!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -53,6 +65,17 @@ const LoginForm = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        toast.success("Welcome to AstroGPT!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+          });
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -5,7 +5,8 @@ import { auth } from "../utils/firebase";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../store/userSlice";
-
+import {  toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Header = () => {
 
@@ -17,6 +18,17 @@ const Header = () => {
     const handleSignOut = ()=>{
         signOut(auth).then(() => {
             // Sign-out successful.
+            toast.success("Logged out successfully.", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+              });
           }).catch((error) => {
             // An error happened.
           });
