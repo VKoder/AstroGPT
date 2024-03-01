@@ -59,7 +59,7 @@ const Header = () => {
       <>
         <div className="bg-purple-600 z-100 flex-row flex items-center justify-between w-12/12 px-2 md:px-16 shadow-2xl">
             <div>
-            {user ? (<Link to={"/"}> <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img></Link>) : <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img>}
+            {user ? (<Link to={"/"}> <img className="w-32 py-3 md:w-44 lg:w-56" src={Logo} alt="Logo"></img></Link>) : <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img>}
             </div>
             <div className="text-white">
               {user && <><Link to={"/chat"}>  <span className={liCSS}>Chat</span></Link>
