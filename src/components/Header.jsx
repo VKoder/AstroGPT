@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../store/userSlice";
 import {  toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { clearFollow, removeFollow } from "../store/followSlice";
+import Fetch from "./Fetch";
 
 const Header = () => {
 
@@ -23,7 +25,7 @@ const Header = () => {
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,
-              pauseOnHover: true,
+              pauseOnHover: false,
               draggable: true,
               progress: undefined,
               theme: "dark",
@@ -32,6 +34,8 @@ const Header = () => {
           }).catch((error) => {
             // An error happened.
           });
+
+          dispatch(clearFollow())
     }
 
     useEffect(()=>{
@@ -52,19 +56,25 @@ const Header = () => {
     
     
     return (
+      <>
         <div className="bg-purple-600 z-100 flex-row flex items-center justify-between w-12/12 px-2 md:px-16 shadow-2xl">
             <div>
             {user ? (<Link to={"/"}> <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img></Link>) : <img className="w-32 md:w-44 lg:w-56" src={Logo} alt="Logo"></img>}
             </div>
-            <div className="text-white  hidden md:block">
+            <div className="text-white">
               {user && <><Link to={"/chat"}>  <span className={liCSS}>Chat</span></Link>
               <Link to={"/call"}>  <span className={liCSS}>Call</span></Link>
-             <span onClick={handleSignOut}>Signout</span></>}
+             <span onClick={handleSignOut}>Signout</span>
+             <Link to={"/following"}><span>Following</span></Link>
+             </>
+             }
              {
                 !user && <span>Login</span>
              }
             </div>
         </div>
+        <Fetch/>
+       </>
     )
 }
 export default Header;

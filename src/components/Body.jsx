@@ -6,6 +6,7 @@ import AstroProfile from "./AstroProfile";
 import Header from "./Header";
 import LoginPage from "./LoginPage";
 import LoginForm from "./LoginForm";
+import Following from "./Following";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
@@ -34,6 +35,10 @@ const Body = () => {
           {
             path: "/astroProfile/:id",
             element: <AstroProfile />,
+          },
+          {
+            path:"/following",
+            element:<Following/>
           },
           {
             path:"/login",

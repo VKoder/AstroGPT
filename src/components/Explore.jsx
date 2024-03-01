@@ -1,3 +1,6 @@
+
+
+
 const Explore = () => {
 
     const btnCSS = "w-full cursor-pointer py-4 md:py-6 lg:py-8 md:text-lg lg:text-xl text-base font-semibold rounded-3xl shadow-md bg-white"
@@ -8,6 +11,7 @@ const Explore = () => {
       <img className= "absolute z-20 w-80" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand.png"></img>
       <img className=" w-[50vw] top-0 hand" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand_bg.png"></img>
       </div> 
+ 
 </div>
   );
 };
