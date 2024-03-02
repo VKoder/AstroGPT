@@ -57,7 +57,7 @@ const Header = () => {
     
     return (
       <>
-        <div className=" z-50 fixed w-full bg-zinc-950 bg-opacity-50 shadow-xl flex-row flex items-center justify-between mb-16 px-2 md:px-16 ">
+        <div className=" z-50 fixed w-full bg-zinc-950 bg-opacity-90 shadow-xl flex-row flex items-center justify-between mb-16 px-2 md:px-10 ">
             <div>
             {user ? (<Link to={"/"}> <img className="w-32 py-3 md:w-44 lg:w-56" src={Logo} alt="Logo"></img></Link>) : <img className="w-32 py-3 md:w-44 lg:w-56" src={Logo} alt="Logo"></img>}
             </div>
@@ -69,7 +69,7 @@ const Header = () => {
              </>
              }
              {
-                !user && <span>Login</span>
+                !user && <span className={liCSS}>Login</span>
              }
             </div>
         </div>

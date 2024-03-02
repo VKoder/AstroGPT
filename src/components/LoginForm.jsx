@@ -94,7 +94,7 @@ const LoginForm = () => {
         {signIn ? (
           <button
             type="submit"
-            className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-inner hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
+            className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-sm hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
             onClick={handleSignIn}
           >
             Sign In
@@ -102,7 +102,7 @@ const LoginForm = () => {
         ) : (
           <button
             type="submit"
-            className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-inner hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
+            className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-sm hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
             onClick={handleSignUp}
           >
             Sign Up

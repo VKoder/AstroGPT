@@ -27,13 +27,13 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex lg:flex-row flex-col  w-12/12 h-screen relative justify-start lg:px-28 lg:pt-20 pt-40 items-center bg-cover bg-center bg-fixed overflow-hidden">
+    <div className="flex lg:flex-row flex-col  w-12/12 h-screen relative justify-start sm:px-20 lg:px-28 lg:pt-20 pt-48 items-center bg-cover bg-center bg-fixed overflow-hidden">
       <img
-        className="hidden md:block absolute w-full brightness-90 top-0 left-0 -z-20 "
+        className="hidden md:block absolute h-screen w-full brightness-90 top-0 left-0 -z-20 "
         src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"
       ></img>
           <img className="absolute md:hidden w-full h-screen brightness-90 top-0 left-0 -z-20 " src="https://images.unsplash.com/photo-1604903256031-4328f723fa33?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8fA%3D%3D"></img>
-      <div className=" lg:w-7/12 w-full   z-10 hidden md:flex  justify-start items-start lg:items-start lg:pt-20 flex-col h-full text-white">
+      <div className=" lg:w-7/12 w-full   z-10 hidden lg:flex  justify-start items-start lg:items-start lg:pt-20 flex-col h-full text-white">
         <span className="text-2xl lg:text-4xl w-full lg:w-6/12 font-medium text-purple-100">
           Welcome to
         </span>
@@ -50,7 +50,7 @@ const LoginPage = () => {
           Explore
         </button>
       </div>
-      <div className="bg-zinc-950 shadow-sm lg:shadow-purple-800 rounded-xl bg-opacity-70 w-11/12 lg:w-[38%] ">
+      <div className="bg-zinc-950 shadow-sm lg:shadow-purple-800 rounded-2xl  bg-opacity-70 w-11/12 sm:w-[70%] lg:w-[38%] ">
         <img
           className="w-7/12 hidden  lg:block absolute -top-[55px] -right-6 -z-20 hand"
           src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand_bg.png"

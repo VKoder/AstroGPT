@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <Provider store={appStore}>
-    <div className=''>
+    <div className='no-scrollbar'>
     <Body/>
     <ToastContainer />
     </div>
