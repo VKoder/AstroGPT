@@ -27,10 +27,10 @@ const Chat = () => {
     const btnCSS = "lg:text-base text-sm border px-2 lg:px-4 py-0.5 lg:py-1.5 border-zinc-600 text-zinc-600 font-normal rounded-full cursor-pointer"
 
     return (
-        <div  className="bg-[#E6E6FA] h-full w-12/12">
-        
-           <div className="lg:pt-6 pt-3 px-4 lg:px-20 flex flex-col justify-center items-start">
-            <div className="w-full flex lg:flex-row flex-col justify-between items-start lg:items-center">
+        <div  className="relative  h-full w-12/12 ">
+            <img className="absolute fixed top-0 left-0 -z-40" src="https://www.webstrot.com/html/horoscope/dark_version/images/content/stars.jpg"></img>
+           <div className="lg:pt-6 pt-3 px-4 lg:px-20 flex flex-col justify-center  items-start">
+            <div className="w-full flex lg:flex-row flex-col justify-between mt-16 items-start lg:items-center">
                 <span className="text-2xl lg:text-3xl font-bold">Chat with Astrologers</span>
                 <div className="flex py-2 relative items-center">
                     <input 

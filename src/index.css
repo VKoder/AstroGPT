@@ -38,9 +38,9 @@
 }
 .hand {
   animation-name: hand;
-  animation-duration: 20s; /* Adjust duration as needed */
+  animation-duration: 40s; /* Adjust duration as needed */
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out; /* Adjust timing function as needed */
+  animation-timing-function: ease-in; /* Adjust timing function as needed */
 }
 
 @keyframes hand {

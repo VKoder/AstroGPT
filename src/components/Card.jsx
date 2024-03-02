@@ -8,7 +8,7 @@ const Card = ({ info }) => {
   }
 
   return (
-    <div className="flex justify-start overflow-hidden  w-full bg-[#F5F5FF] shadow-md rounded-xl gap-4  px-2 py-2 items-start h-full flex-row">
+    <div className="flex justify-start overflow-hidden  w-full bg-zinc-700 shadow-md rounded-xl gap-4  px-2 py-2 items-start h-full flex-row">
       <div className="w-3/12 h-full  py-2  flex flex-col justify-start items-center">
         <div className="relative">
         <img className="rounded-full " src={PROFILE_BG} alt="bg"></img>
@@ -40,7 +40,7 @@ const Card = ({ info }) => {
         </span>
       </div>
       <div className="w-6/12 py-2 h-full flex flex-col gap-1 justify-start items-start">
-        <span className="text-black font-semibold">{info?.name}</span>
+        <span className=" text-white font-semibold">{info?.name}</span>
         <span className="text-sm  text-gray-600 font-semibold">
           {info?.skill.length > 20 ? `${info?.skill.slice(0, 20)}...` : info?.skill}
         </span>
