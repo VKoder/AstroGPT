@@ -1,21 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 const Fetch = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const todayResponse = await fetch("https://aztro.sameerkumar.website?sign=cancer&day=today", { method: "POST" });
 
-  
+        const todayData = await todayResponse.json();
 
-  const fetchData = async () => {
-    const data = await fetch('https://corsproxy.org/?https%3A%2F%2Fapi.astromall.astrotalk.com%2FAstroMall%2Fastromall%2Fget%2Fproduct-type%3Fuser%3D0%26timeZone%3DAsia%2FKolkata')
-    const json =await data.json()
-    console.log(json)
-  };
-  useEffect(()=>{
-    fetchData()
-  },[])
- 
-  return (
-    <></>
-  )
+        console.log("Today's Horoscope:", todayData);
+       
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return null; // This component doesn't render anything, it's just for fetching data
 };
 
 export default Fetch;

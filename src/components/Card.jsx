@@ -1,11 +1,18 @@
-import { PROFILE_BG, PROFILE_IMG, TICKED } from "../utils/constants";
+import { PROFILE_BG, PROFILE_IMG } from "../utils/constants";
 import ShimmerList from "../shimmer/ShimmerList";
 
+import lang from "../utils/langConstants";
+import { useSelector } from "react-redux";
+
 const Card = ({ info }) => {
+
+    const Langkey = useSelector(store => store.configApp.lang)
 
   if (!info) {
     return <ShimmerList />
   }
+
+
 
   return (
     <div className="flex justify-start overflow-hidden shadow-sm shadow-zinc-700 hover:bg-purple-800 transition-all hover:bg-opacity-55 w-full bg-purple-950 bg-opacity-55  rounded-xl gap-4  px-2 py-2 items-start h-full flex-row">
@@ -36,7 +43,7 @@ const Card = ({ info }) => {
 
         <span className="text-xs text-purple-100 font-semibold">
           {" "}
-          {info?.order} Orders
+          {info?.order} {lang[Langkey].orders}
         </span>
       </div>
       <div className="w-6/12 py-2 h-full flex flex-col gap-1 justify-start items-start">
@@ -48,9 +55,9 @@ const Card = ({ info }) => {
           {info?.lang}
         </span>
         <span className="text-sm text-purple-100 font-semibold">
-          Exp: {info?.exp} Years
+         {lang[Langkey].exp} : {info?.exp} {lang[Langkey].years}
         </span>
-        <span className="text-sm text-purple-100"> <span className="text-base pr-1 font-semibold text-purple-100">₹{info?.price}</span>/min</span>
+        <span className="text-sm text-purple-100"> <span className="text-base pr-1 font-semibold text-purple-100">₹{info?.price}</span>/{lang[Langkey].min}</span>
       </div>
       <div className="w-2/12  h-full flex flex-col  gap-20 justify-between items-end">
         <div className="flex flex-row">

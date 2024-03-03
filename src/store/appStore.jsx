@@ -3,6 +3,7 @@ import astroReducer from "./AstroSlice"
 import commentReducer from "./CommentsSlice"
 import userReducer from "./userSlice"
 import followReducer from "./followSlice"
+import configAppSliceReducer from "./configAppSlice";
 
 
 const appStore = configureStore({
@@ -11,6 +12,7 @@ const appStore = configureStore({
         comment : commentReducer,
         user: userReducer,
         follow: followReducer,
+        configApp: configAppSliceReducer,
     }
 })
 export default appStore;

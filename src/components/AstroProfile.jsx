@@ -22,7 +22,6 @@ const AstroProfile = () => {
     return <ShimmerProfile />;
   }
   const { data } = astroProfile;
-  console.log(data);
 
   const handlefollow = (data) => {
     toast("🔥 Followed " + data?.name, {
