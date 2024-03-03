@@ -17,10 +17,10 @@ const Card = ({ info }) => {
   return (
     <div className="flex justify-start overflow-hidden shadow-sm shadow-zinc-700 hover:bg-purple-800 transition-all hover:bg-opacity-55 w-full bg-purple-950 bg-opacity-55  rounded-xl gap-4  px-2 py-2 items-start h-full flex-row">
       <div className="w-3/12 h-full  py-2  flex flex-col justify-start items-center">
-        <div className="relative">
+        <div className="relative ">
         <img className="rounded-full " src={PROFILE_BG} alt="bg"></img>
         <img
-          className="lg:w-20 absolute bottom-0"
+          className="lg:w-20 absolute xl:left-2 bottom-0"
           src={PROFILE_IMG + info?.picId}
           alt="profile"
         ></img>

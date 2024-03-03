@@ -4,7 +4,7 @@ const Fetch = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const todayResponse = await fetch("https://aztro.sameerkumar.website?sign=cancer&day=today", { method: "POST" });
+        const todayResponse = await fetch("https://aztro.sameerkumar.website?sign=leo&day=today", { method: "POST" });
 
         const todayData = await todayResponse.json();
 

@@ -23,7 +23,7 @@
 }
 .animate {
   animation: shimmer 3s infinite;
-  background: linear-gradient(to right, #A0A0A0 5%, #B0B0B0 25%, #A0A0A0 35%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   background-size: 1000px 100%;
 }
 
