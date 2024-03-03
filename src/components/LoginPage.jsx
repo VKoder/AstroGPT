@@ -3,6 +3,7 @@ import LoginForm from "./LoginForm";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast, Bounce } from "react-toastify";
+import Header from "./Header";
 
 const LoginPage = () => {
   const user = useSelector((store) => store.user);
@@ -27,6 +28,8 @@ const LoginPage = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div className="flex lg:flex-row flex-col  w-12/12 h-screen relative justify-start sm:px-20 lg:px-28 lg:pt-20 pt-48 items-center bg-cover bg-center bg-fixed overflow-hidden">
       <img
         className="hidden md:block absolute h-screen w-full brightness-90 top-0 left-0 -z-20 "
@@ -63,6 +66,7 @@ const LoginPage = () => {
         <LoginForm />
       </div>
     </div>
+    </>
   );
 };
 

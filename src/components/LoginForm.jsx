@@ -1,14 +1,18 @@
 import React, { useRef, useState } from "react";
 import { checkValidData, checkValidData2 } from "../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import {  toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from "react-redux";
+import { addUser } from "../store/userSlice";
 
 
 const LoginForm = () => {
   const [signIn, setsignIn] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
+
+  const dispatch = useDispatch();
 
   const handleToggle = () => {
     setsignIn(!signIn);
@@ -20,6 +24,8 @@ const LoginForm = () => {
   const handleSignIn = () => {
     const message = checkValidData(email.current.value, password.current.value);
     seterrorMessage(message);
+
+
 
     if (message) return;
 
@@ -64,7 +70,18 @@ const LoginForm = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+        updateProfile(user, {
+          displayName: name.current.value,
+        })
+          .then(() => {
+            const { uid, email, displayName } = auth;
+            dispatch(
+              addUser({ uid: uid, email: email, displayName: displayName })
+            );
+          })
+          .catch((error) => {
+            seterrorMessage(error.message);
+          });
         toast.success("Welcome to AstroGPT!", {
           position: "top-center",
           autoClose: 5000,

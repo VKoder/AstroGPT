@@ -39,19 +39,19 @@ const Header = () => {
     }
 
     useEffect(()=>{
-        onAuthStateChanged(auth, (user) => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
             //destructing the user object and pushing it to store
               const {uid, displayName, email} = user;
-              console.log(displayName + email)
               dispatch(addUser({uid: uid, displayName: displayName,email:email}))
               navigate("/")  
 
             } else {
-                navigate("/login")
                 dispatch(removeUser())
+                navigate("/login")
             }
           });
+          return () => unsubscribe();
     },[])
     
     

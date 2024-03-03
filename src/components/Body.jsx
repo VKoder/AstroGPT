@@ -40,16 +40,16 @@ const Body = () => {
             path:"/following",
             element:<Following/>
           },
-          {
-            path:"/login",
-            element:<LoginPage/>
-          },
+          
       ])
        
         
         
     },
-  
+    {
+      path:"/login",
+      element:<LoginPage/>
+    },
    
   ]);
 
