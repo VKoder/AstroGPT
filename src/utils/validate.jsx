@@ -26,3 +26,42 @@ export const checkValidData = (email, password) => {
     return null;
 
   };
+
+  export const kundlicheck = (name, dob, time, gender, place, district, state, nation)=>{
+
+    const nameValidate = name !== "" && name !== undefined
+    const dobValidate = dob !== "" && dob !== undefined
+    const timeValidate = time !== "" && time !== undefined
+    const genderValidate = gender !== "" && gender !== undefined
+    const placeValidate = place !== "" && place !== undefined
+    const districtValidate = district !== "" && district !== undefined
+    const stateValidate = state !== "" && state !== undefined
+    const nationValidate = nation !== "" && nation !== undefined
+
+    if (!nameValidate) {
+      return "Please Enter a Valid Name"
+    }
+    if (!dobValidate) {
+      return "Please Enter a Valid Date of Birth"
+    } if (!timeValidate) {
+      return "Please Enter a Valid Time"
+    }
+    if (!placeValidate) {
+      return "Please Enter a Valid Place"
+    }
+
+    if (!genderValidate) {
+      return "Please Enter a Valid Gender"
+    }
+    if (!districtValidate) {
+      return "Please Enter a Valid District"
+    }
+    if (!stateValidate) {
+      return "Please Enter a Valid State"
+    }
+    if (!nationValidate) {
+      return "Please Enter a Valid Nation"
+    }
+    return null;
+    
+  }

@@ -1,20 +1,23 @@
 import React, { useRef, useState } from "react";
 import { checkValidData, checkValidData2 } from "../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
-import {  toast, Bounce } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../store/userSlice";
 import lang from "../utils/langConstants";
-
 
 const LoginForm = () => {
   const [signIn, setsignIn] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
 
   const dispatch = useDispatch();
-  const Langkey = useSelector(store => store.configApp.lang)
+  const Langkey = useSelector((store) => store.configApp.lang);
 
   const handleToggle = () => {
     setsignIn(!signIn);
@@ -27,11 +30,13 @@ const LoginForm = () => {
     const message = checkValidData(email.current.value, password.current.value);
     seterrorMessage(message);
 
-
-
     if (message) return;
 
-    signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+    signInWithEmailAndPassword(
+      auth,
+      email.current.value,
+      password.current.value
+    )
       .then((userCredential) => {
         const user = userCredential.user;
         toast.success("Login successful!", {
@@ -44,15 +49,14 @@ const LoginForm = () => {
           progress: undefined,
           theme: "dark",
           transition: Bounce,
-          });
+        });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode === "auth/invalid-credential") {
-            seterrorMessage("Incorrect Details Please Try Again")
+          seterrorMessage("Incorrect Details Please Try Again");
         }
-        
       });
   };
   const handleSignUp = () => {
@@ -94,7 +98,7 @@ const LoginForm = () => {
           progress: undefined,
           theme: "dark",
           transition: Bounce,
-          });
+        });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -105,10 +109,35 @@ const LoginForm = () => {
   return (
     <div className="px-16 py-8  w-full">
       <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
-        {signIn ? <h2 className="py-4 text-4xl text-purple-200 font-bold">{lang[Langkey].signIn}</h2> : <h2 className="py-4 text-4xl text-purple-200 font-bold">{lang[Langkey].signUp}</h2>}
-        {!signIn && <input className="px-2 py-1.5  hover:border-b-purple-400 outline-none lg:py-3 lg:my-4 my-2 bg-black  text-purple-200 bg-opacity-50 border-2 border-purple-800 rounded-lg" type="text" placeholder={lang[Langkey].name} ref={name}></input>}
-        <input className="px-2 hover:border-b-purple-400 outline-none py-1.5 lg:py-3 lg:my-4 my-2 bg-black  text-purple-200 bg-opacity-50 border-2 border-purple-800 rounded-lg" type="email" placeholder={lang[Langkey].email} ref={email}></input>
-        <input className="px-2 py-1.5  hover:border-b-purple-400 outline-none lg:py-3 lg:my-4 my-2 bg-black  text-purple-200 bg-opacity-50 border-2 border-purple-800 rounded-lg" type="password" placeholder={lang[Langkey].password} ref={password}></input>
+        {signIn ? (
+          <h2 className="py-4 text-4xl text-purple-200 font-bold">
+            {lang[Langkey].signIn}
+          </h2>
+        ) : (
+          <h2 className="py-4 text-4xl text-purple-200 font-bold">
+            {lang[Langkey].signUp}
+          </h2>
+        )}
+        {!signIn && (
+          <input
+            className="px-2 py-1.5  hover:border-b-purple-400 outline-none lg:py-3 lg:my-4 my-2 bg-black  text-purple-200 bg-opacity-50 border-2 border-purple-800 rounded-lg"
+            type="text"
+            placeholder={lang[Langkey].name}
+            ref={name}
+          ></input>
+        )}
+        <input
+          className="px-2 hover:border-b-purple-400 outline-none py-1.5 lg:py-3 lg:my-4 my-2 bg-black  text-purple-200 bg-opacity-50 border-2 border-purple-800 rounded-lg"
+          type="email"
+          placeholder={lang[Langkey].email}
+          ref={email}
+        ></input>
+        <input
+          className="px-2 py-1.5  hover:border-b-purple-400 outline-none lg:py-3 lg:my-4 my-2 bg-black  text-purple-200 bg-opacity-50 border-2 border-purple-800 rounded-lg"
+          type="password"
+          placeholder={lang[Langkey].password}
+          ref={password}
+        ></input>
         <span className="text-red-700 font-semibold">{errorMessage}</span>
         {signIn ? (
           <button
@@ -116,7 +145,7 @@ const LoginForm = () => {
             className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-sm hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
             onClick={handleSignIn}
           >
-           {lang[Langkey].signIn}
+            {lang[Langkey].signIn}
           </button>
         ) : (
           <button
@@ -124,18 +153,32 @@ const LoginForm = () => {
             className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-sm hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
             onClick={handleSignUp}
           >
-           {lang[Langkey].signUp}
+            {lang[Langkey].signUp}
           </button>
         )}
         {!signIn ? (
           <div className="flex flex-row">
-          <span className="text-gray-300 py-1.5 text-xs lg:text-sm   lg:py-3">{lang[Langkey].alreadyAcc}</span>
-          <span className="text-gray-300 py-1.5 text-xs lg:text-sm cursor-pointer lg:pl-1.5 pl-1  lg:py-3" onClick={handleToggle}>{lang[Langkey].signIn}</span>
+            <span className="text-gray-300 py-1.5 text-xs lg:text-sm   lg:py-3">
+              {lang[Langkey].alreadyAcc}
+            </span>
+            <span
+              className="text-gray-300 py-1.5 text-xs lg:text-sm cursor-pointer lg:pl-1.5 pl-1  lg:py-3"
+              onClick={handleToggle}
+            >
+              {lang[Langkey].signIn}
+            </span>
           </div>
         ) : (
           <div className="flex flex-row">
-          <span className="text-gray-300 py-1.5 text-xs lg:text-sm  lg:py-3" >{lang[Langkey].newtoAstroGPT}</span>
-          <span className="text-gray-300 py-1.5 text-xs lg:text-sm lg:pl-1.5 pl-1 cursor-pointer lg:py-3" onClick={handleToggle}>{lang[Langkey].signUp}</span>
+            <span className="text-gray-300 py-1.5 text-xs lg:text-sm  lg:py-3">
+              {lang[Langkey].newtoAstroGPT}
+            </span>
+            <span
+              className="text-gray-300 py-1.5 text-xs lg:text-sm lg:pl-1.5 pl-1 cursor-pointer lg:py-3"
+              onClick={handleToggle}
+            >
+              {lang[Langkey].signUp}
+            </span>
           </div>
         )}
       </form>

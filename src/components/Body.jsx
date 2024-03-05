@@ -5,8 +5,9 @@ import Call from "./Call";
 import AstroProfile from "./AstroProfile";
 import Header from "./Header";
 import LoginPage from "./LoginPage";
-import LoginForm from "./LoginForm";
 import Following from "./Following";
+import Chatbot from "./Chatbot";
+import AstroKundli from "./AstroKundli";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
@@ -40,7 +41,14 @@ const Body = () => {
             path:"/following",
             element:<Following/>
           },
-          
+          {
+            path:"/chatbot",
+            element:<Chatbot/>
+          },
+          {
+            path:"/kundligpt",
+            element:<AstroKundli/>
+          },
       ])
        
         

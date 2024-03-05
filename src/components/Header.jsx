@@ -99,7 +99,13 @@ const Header = () => {
               <Link to={"/following"} className={liCSS}>
                 <span>Following</span>
               </Link>
-              <span>{user?.displayName}</span>
+              <Link to={"/chatbot"} className={liCSS}>
+                <span>Chat bot</span>
+              </Link>
+              <Link to={"/kundligpt"} className={liCSS}>
+                <span>Kundli GPT</span>
+              </Link>
+              {/* <span>{user?.displayName}</span> */}
             </>
           )}
           {!user && <span className={liCSS}>Login</span>}
