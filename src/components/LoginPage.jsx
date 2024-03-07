@@ -39,19 +39,27 @@ const LoginPage = () => {
       ></img>
           <img className="absolute md:hidden w-full h-screen brightness-90 top-0 left-0 -z-20 " src="https://images.unsplash.com/photo-1604903256031-4328f723fa33?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8fA%3D%3D"></img>
       <div className=" lg:w-7/12 w-full   z-10 hidden lg:flex  justify-start items-start lg:items-start lg:pt-20 flex-col h-full text-white">
-        <span className="text-2xl lg:text-4xl w-full lg:w-6/12 font-medium text-purple-100">
+        <span className="text-2xl uppercase tracking-[10px] lg:text-5xl w-full lg:w-8/12 font-medium text-purple-100">
          {lang[Langkey].welcome}
         </span>
-        <span className="lg:text-8xl text-3xl font-bold text-purple-200"> {lang[Langkey].astroGPT}</span>
-        <span className="lg:pt-6 pt-3 text-xs tracking-wider lg:text-base font-normal w-8/12 lg:items-start lg:text-left items-center flex text-center italic text-zinc-300">
+        <span className="lg:text-[85px] tracking-wide text-6xl font-bold text-purple-300"> {lang[Langkey].astroGPT}</span>
+        <span className="text-2xl uppercase tracking-[4.5px] lg:text-2xl w-full lg:w-8/12 font-medium text-purple-100">Your Horoscope Realm</span>
+        <span className="lg:py-4 pt-3 text-base tracking-wide  font-normal w-[57%] lg:items-start lg:text-left items-center flex text-center italic text-zinc-300">
           {lang[Langkey].loginDescription}
         </span>
+        <div className="flex flex-row gap-3">
         <button
-          className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-inner hover: hover:shadow-purple-700 border-purple-700 transition-all lg:my-6 my-3 py-1.5 lg:py-2 rounded-lg text-white bg-purple-700 uppercase tracking-wider font-semibold text-lg lg:text-xl"
+          className="lg:px-6 px-4 hover:bg-transparent border-2 rounded-full hover:shadow-inner   shadow-purple-950  ring-purple-100 shadow-lg hover:shadow-purple-700 border-purple-700 transition-all lg:my-3 my-1 py-1.5 lg:py-2  text-white bg-purple-700  uppercase tracking-wider font-semibold text-base lg:text-lg"
           onClick={handleform}
         >
           {lang[Langkey].explore}
         </button>
+        <button
+          className="lg:px-6 px-4 hover:bg-transparent border-2 rounded-full hover:shadow-inner   shadow-purple-950  ring-purple-100 shadow-lg hover:shadow-purple-700 border-purple-700 transition-all lg:my-3 my-1 py-1.5 lg:py-2  text-white bg-purple-700  uppercase tracking-wider font-semibold text-base lg:text-lg"
+          >
+         AstroKundli
+         </button>
+         </div>
       </div>
       <div className="bg-zinc-950 shadow-sm lg:shadow-purple-800 rounded-2xl  bg-opacity-70 w-11/12 sm:w-[70%] lg:w-[38%] ">
         <img

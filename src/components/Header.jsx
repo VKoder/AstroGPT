@@ -10,14 +10,20 @@ import "react-toastify/dist/ReactToastify.css";
 import { clearFollow, removeFollow } from "../store/followSlice";
 import Fetch from "./Fetch";
 import { MULTI_LANG } from "../utils/constants";
-import { addLang } from "../store/configAppSlice";
+import { addForm, addLang, removeForm } from "../store/configAppSlice";
+import LoginForm from "./LoginForm";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
+  const form = useSelector((store) => store.configApp.form);
   const navigate = useNavigate();
   const liCSS =
-    "font-semibold uppercase tracking-wide text-sm pl-5 cursor-pointer";
+    "font-semibold uppercase tracking-wide text-sm pr-5 cursor-pointer";
   const dispatch = useDispatch();
+
+  const handleform = () => {
+    dispatch(addForm());
+  };
 
   const handleSignOut = () => {
     signOut(auth)
@@ -48,10 +54,9 @@ const Header = () => {
         //destructing the user object and pushing it to store
         const { uid, displayName, email } = user;
         dispatch(addUser({ uid: uid, displayName: displayName, email: email }));
-        navigate("/");
+        dispatch(removeForm())
       } else {
         dispatch(removeUser());
-        navigate("/login");
       }
     });
     return () => unsubscribe();
@@ -63,62 +68,71 @@ const Header = () => {
 
   return (
     <>
-      <div className=" z-50 fixed w-full bg-zinc-950 bg-opacity-90 shadow-xl flex-row flex items-center justify-between mb-16 px-2 md:px-10 ">
+      <div className=" z-50 fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  flex-row flex items-center justify-between  px-2 md:px-10 ">
         <div>
-          {user ? (
-            <Link to={"/"}>
-              {" "}
-              <img
-                className="w-32 py-3 md:w-44 lg:w-56"
-                src={Logo}
-                alt="Logo"
-              ></img>
-            </Link>
-          ) : (
+          <Link to={"/"}>
+            {" "}
             <img
-              className="w-32 py-3 md:w-44 lg:w-56"
+              className="w-32 py-3 md:w-44 lg:w-48"
               src={Logo}
               alt="Logo"
             ></img>
-          )}
+          </Link>
         </div>
         <div className="text-white">
-          {user && (
-            <>
-              <Link to={"/chat"}>
-                {" "}
-                <span className={liCSS}>Chat</span>
-              </Link>
-              <Link to={"/call"}>
-                {" "}
-                <span className={liCSS}>Call</span>
-              </Link>
-              <span onClick={handleSignOut} className={liCSS}>
-                Signout
-              </span>
-              <Link to={"/following"} className={liCSS}>
-                <span>Following</span>
-              </Link>
-              <Link to={"/chatbot"} className={liCSS}>
-                <span>Chat bot</span>
-              </Link>
-              <Link to={"/kundligpt"} className={liCSS}>
-                <span>Kundli GPT</span>
-              </Link>
-              {/* <span>{user?.displayName}</span> */}
-            </>
+          <Link to={"/chat"}>
+            {" "}
+            <span className={liCSS}>Chat</span>
+          </Link>
+          <Link to={"/call"}>
+            {" "}
+            <span className={liCSS}>Call</span>
+          </Link>
+          {!user ? (
+            <span onClick={handleform} className={liCSS}>
+              Login
+            </span>
+          ) : (
+            <span onClick={handleSignOut} className={liCSS}>
+              Signout
+            </span>
           )}
-          {!user && <span className={liCSS}>Login</span>}
-          <select className="pl-2  py-2 mx-4 text-purple-200 bg-purple-800 rounded-md bg-opacity-80" onChange={handleLang}>
+
+          <Link to={"/following"} className={liCSS}>
+            <span>Following</span>
+          </Link>
+          <Link to={"/chatbot"} className={liCSS}>
+            <span>Chat bot</span>
+          </Link>
+          <Link to={"/kundligpt"} className={liCSS}>
+            <span>Kundli GPT</span>
+          </Link>
+          {
+            user && <span>{user?.displayName}</span>
+          }
+        </div>
+        <div>
+          <select
+            className="pl-2  py-2 mx-4 text-purple-200 bg-purple-800 rounded-md bg-opacity-80"
+            onChange={handleLang}
+          >
             {MULTI_LANG.map((lang) => (
-              <option className="" key={lang?.identifier} value={lang?.identifier}>
+              <option
+                className=""
+                key={lang?.identifier}
+                value={lang?.identifier}
+              >
                 {lang?.name}
               </option>
             ))}
           </select>
         </div>
       </div>
-      <Fetch />
+      {form && (
+        <div className="z-20 absolute top-0 w-full">
+          <LoginForm />
+        </div>
+      )}
     </>
   );
 };

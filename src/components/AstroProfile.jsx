@@ -165,11 +165,11 @@ const AstroProfile = () => {
               {data?.problemArea}
             </span>
           </div>
-          <div className="w-full pt-4 gap-4 flex flex-row">
+          <div className="w-full pt-4 gap-4 flex flex-wrap justify-center items-center flex-row">
             {data?.album.map((img) => (
               <div
                 key={img?.url}
-                className="rounded-2xl bg-center border-2 shadow-md lg:w-[300px] w-[500px] h-[80px] lg:h-[280px]  overflow-hidden"
+                className="rounded-2xl bg-center  shadow-purple-600 shadow-md lg:w-[300px] w-full h-[200px] lg:h-[280px]  overflow-hidden"
               >
                 <img className="w-full" src={img?.url} alt="img"></img>
               </div>

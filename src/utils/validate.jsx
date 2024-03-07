@@ -27,41 +27,31 @@ export const checkValidData = (email, password) => {
 
   };
 
-  export const kundlicheck = (name, dob, time, gender, place, district, state, nation)=>{
+  export const kundlicheck = (name, place, district, time,gen)=>{
 
     const nameValidate = name !== "" && name !== undefined
-    const dobValidate = dob !== "" && dob !== undefined
-    const timeValidate = time !== "" && time !== undefined
-    const genderValidate = gender !== "" && gender !== undefined
     const placeValidate = place !== "" && place !== undefined
     const districtValidate = district !== "" && district !== undefined
-    const stateValidate = state !== "" && state !== undefined
-    const nationValidate = nation !== "" && nation !== undefined
+    const timeValidate = time !== "" && time !== undefined
+    const gender = gen !== "" && gen!== undefined
 
     if (!nameValidate) {
       return "Please Enter a Valid Name"
     }
-    if (!dobValidate) {
-      return "Please Enter a Valid Date of Birth"
-    } if (!timeValidate) {
-      return "Please Enter a Valid Time"
-    }
     if (!placeValidate) {
       return "Please Enter a Valid Place"
-    }
-
-    if (!genderValidate) {
-      return "Please Enter a Valid Gender"
     }
     if (!districtValidate) {
       return "Please Enter a Valid District"
     }
-    if (!stateValidate) {
-      return "Please Enter a Valid State"
+   
+    if (!timeValidate) {
+      return "Please Enter a Valid Time"
     }
-    if (!nationValidate) {
-      return "Please Enter a Valid Nation"
+
+    if (!gender) {
+      return "Please Enter a Valid Gender"
     }
     return null;
-    
+  
   }

@@ -8,6 +8,7 @@ import LoginPage from "./LoginPage";
 import Following from "./Following";
 import Chatbot from "./Chatbot";
 import AstroKundli from "./AstroKundli";
+import LoginForm from "./LoginForm";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
@@ -56,7 +57,7 @@ const Body = () => {
     },
     {
       path:"/login",
-      element:<LoginPage/>
+      element:<LoginForm/>
     },
    
   ]);

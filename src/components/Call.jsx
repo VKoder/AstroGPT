@@ -29,7 +29,7 @@ const Call = () => {
       
     };
 
-    const btnCSS = "lg:text-base active:bg-purple-900 active:text-purple-100 bg-purple-600 bg-opacity-10 hover:bg-purple-800   transition-all text-sm border px-4  lg:px-4 py-2 lg:py-1.5   border-purple-600 text-purple-300 font-normal rounded-3xl sm:rounded-full cursor-pointer"
+    const btnCSS = "lg:text-base active:bg-purple-900 focus:bg-purple-800 active:bg-purple-800 active:text-purple-100 bg-purple-600 bg-opacity-10 hover:bg-purple-800   transition-all text-sm border px-4  lg:px-4 py-2 lg:py-1.5   border-purple-600 text-purple-300 font-normal rounded-3xl sm:rounded-full cursor-pointer"
     return (
     
         <div className="relative w-12/12  ">

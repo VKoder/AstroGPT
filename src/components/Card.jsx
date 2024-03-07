@@ -20,7 +20,7 @@ const Card = ({ info }) => {
         <div className="relative ">
         <img className="rounded-full " src={PROFILE_BG} alt="bg"></img>
         <img
-          className="lg:w-20 absolute xl:left-2 bottom-0"
+          className="lg:w-20 absolute xl:left-[2px] bottom-0"
           src={PROFILE_IMG + info?.picId}
           alt="profile"
         ></img>

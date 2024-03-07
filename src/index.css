@@ -7,7 +7,24 @@
   margin: 0;
   box-sizing: border-box;
   scrollbar-width: 0;
+  scroll-behavior: smooth;
 }
+*::selection {
+  background-color: white;
+  color: rgb(166, 30, 166);
+}
+
+*::-webkit-scrollbar {
+  display: block;
+  background-color: #040404;
+  width: 0.4vw;
+  z-index: 99;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(109, 30, 166);;
+  border-radius: 2vw; 
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -38,9 +55,9 @@
 }
 .hand {
   animation-name: hand;
-  animation-duration: 40s; /* Adjust duration as needed */
+  animation-duration: 10s; /* Adjust duration as needed */
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in; /* Adjust timing function as needed */
+  animation-timing-function: linear;
 }
 
 @keyframes hand {
@@ -50,4 +67,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+.spanCSS{
+  transition: 0.1s;
+  transition-timing-function: ease-in-out;
+
+}
+
+
+.inputCSS:focus + .spanCSS,
+.inputCSS:valid  + .spanCSS{
+  top: -15px;
+  font-size: 14px;  
+ 
 }

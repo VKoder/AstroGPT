@@ -11,10 +11,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../store/userSlice";
 import lang from "../utils/langConstants";
+import { addForm } from "../store/configAppSlice";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [signIn, setsignIn] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
+  const navigate = useNavigate()
 
   const dispatch = useDispatch();
   const Langkey = useSelector((store) => store.configApp.lang);
@@ -58,6 +61,7 @@ const LoginForm = () => {
           seterrorMessage("Incorrect Details Please Try Again");
         }
       });
+     
   };
   const handleSignUp = () => {
     const message = checkValidData2(
@@ -84,6 +88,7 @@ const LoginForm = () => {
             dispatch(
               addUser({ uid: uid, email: email, displayName: displayName })
             );
+            console.log({ uid: uid, email: email, displayName: displayName })
           })
           .catch((error) => {
             seterrorMessage(error.message);
@@ -105,10 +110,17 @@ const LoginForm = () => {
         const errorMessage = error.message;
         seterrorMessage(errorMessage);
       });
+     
   };
+
+  const handleform =()=>{
+    dispatch(addForm())
+  }
+
   return (
-    <div className="px-16 py-8  w-full">
-      <form onSubmit={(e) => e.preventDefault()} className="flex flex-col">
+    <div className="w-12/12 flex justify-center py-20 left-0 items-center z-50 bg-purple-950 transition-all bg-opacity-50">
+      <div className="bg-zinc-950 shadow-sm w-full lg:px-10 py-12 lg:shadow-purple-800 rounded-2xl transition-all bg-opacity-90  sm:w-[70%] lg:w-[33%]">
+      <form onSubmit={(e) => e.preventDefault()} className="relative flex flex-col">
         {signIn ? (
           <h2 className="py-4 text-4xl text-purple-200 font-bold">
             {lang[Langkey].signIn}
@@ -142,7 +154,7 @@ const LoginForm = () => {
         {signIn ? (
           <button
             type="submit"
-            className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-sm hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
+            className="lg:px-8 px-4 hover:bg-opacity-50 border-2  shadow-md  shadow-purple-950 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
             onClick={handleSignIn}
           >
             {lang[Langkey].signIn}
@@ -150,7 +162,7 @@ const LoginForm = () => {
         ) : (
           <button
             type="submit"
-            className="lg:px-8 px-4 hover:bg-transparent border-2  hover:shadow-sm hover: hover:shadow-purple-700 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
+            className="lg:px-8 px-4 hover:bg-opacity-50 border-2  shadow-md  shadow-purple-950 border-purple-800 transition-all lg:my-2 my-1 py-1 lg:py-2 rounded-lg text-white bg-purple-800  tracking-wider font-medium lg:font-semibold text-lg lg:text-xl"
             onClick={handleSignUp}
           >
             {lang[Langkey].signUp}
@@ -181,7 +193,9 @@ const LoginForm = () => {
             </span>
           </div>
         )}
+        <div className="absolute -top-7 -right-3 cursor-pointer" onClick={handleform}> <i className="text-3xl text-purple-300 ri-close-fill"></i></div>
       </form>
+      </div>
     </div>
   );
 };
