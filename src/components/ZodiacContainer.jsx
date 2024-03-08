@@ -11,36 +11,39 @@ import Libra from "../image/Sign/sign7.svg"
 import Scorpio from "../image/Sign/sign8.svg"
 import Sagittarius from "../image/Sign/sign9.svg"
 import Capricorn from "../image/Sign/sign10.svg"
-import Pisces from "../image/Sign/sign11.svg"
+import Aquarius from "../image/Sign/sign11.svg"
+import Pisces from "../image/Sign/sign12.svg"
 
 const ZodiacContainer = () => {
   return (
     <div className=' px-14 flex justify-center items-center relative w-12/12 opacity-90'>
-        <img alt='cycle' className='  absolute hand w-96' src={zodiac}></img>
+        <img alt='cycle' className='hidden lg:block absolute hand w-96' src={zodiac}></img>
         
         <div className='flex flex-col w-full h-full'>
-        <div className='flex justify-center items-center py-3  w-full h-full flex-wrap'>
+        <div className='flex justify-center lg:gap-10 items-center lg:py-3  w-full h-full flex-wrap'>
             <ZodiacCard name={"Aries"} value={"Aries"} img={Aries}/>
+            <ZodiacCard name={"Aquarius"} value={"Aquarius"} img={Aquarius}/>
         </div>
-        <div className='flex justify-evenly gap-32 items-center py-3  w-full h-full flex-wrap'>
+        <div className='flex justify-evenly lg:gap-32 items-center lg:py-3  w-full h-full flex-wrap'>
             <ZodiacCard name={"Taurus"} value={"Taurus"}  img={Taurus}/>
             <ZodiacCard name={"Gemini"} value={"Gemini"} img={Gemini}/>
             
         </div>
-        <div className='flex justify-between items-center py-3  w-full h-full flex-wrap'>
+        <div className='flex justify-between items-center lg:py-3 w-full h-full flex-wrap'>
         <ZodiacCard name={"Cancer"} value={"Cancer"}  img={Cancer}/>
             <ZodiacCard name={"Leo"} value={"Leo"} img={Leo}/>
         </div>
-        <div className='flex justify-between items-center py-3  w-full h-full flex-wrap'>
+        <div className='flex justify-between items-center lg:py-3  w-full h-full flex-wrap'>
         <ZodiacCard name={"Virgo"} value={"Virgo"}  img={Virgo}/>
             <ZodiacCard name={"Libra"} value={"Libra"} img={Libra}/>
         </div>
-        <div className='flex justify-evenly gap-32 items-center py-3  w-full h-full flex-wrap'>
+        <div className='flex justify-evenly lg:gap-32 items-center lg:py-3  w-full h-full flex-wrap'>
         <ZodiacCard name={"Scorpio"} value={"Scorpio"}  img={Scorpio}/>
-            <ZodiacCard name={"Sagittarius"} value={"Sagittarius"} img={Sagittarius}/>
+            <ZodiacCard name={"Pisces"} value={"Pisces"} img={Pisces}/>
         </div>
-        <div className='flex justify-center items-center py-3  w-full h-full flex-wrap'>
+        <div className='flex justify-center items-center py-3  lg:gap-10 w-full h-full flex-wrap'>
             <ZodiacCard name={"Capricorn"} value={"Capricorn"} img={Capricorn}/>
+            <ZodiacCard name={"Sagittarius"} value={"Sagittarius"} img={Sagittarius}/>
         </div>
         </div>
     </div>
