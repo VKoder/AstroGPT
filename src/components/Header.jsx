@@ -68,7 +68,7 @@ const Header = () => {
 
   return (
     <>
-      <div className=" z-50 fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  flex-row flex items-center justify-between  px-2 md:px-10 ">
+      <div className=" z-50 fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  py-1 flex-row flex items-center justify-between  px-2 md:px-10 ">
         <div>
           <Link to={"/"}>
             {" "}

@@ -3,7 +3,7 @@ import React from "react";
 const ShimmerProfile = () => {
   return (
     <div className="w-12/12 bg-zinc-900">
-      <div className="h-full px-6 py-6 md:px-20 md:py-28 w-12/12">
+      <div className="h-full px-6 pt-24  md:px-20  md:py-28 w-12/12">
         <div className="md:h-[70vh] h-screen  md:gap-8 rounded-xl px-6 py-6 bg-zinc-700 flex flex-col md:flex-row justify-start items-center">
           <div className="w-3/12 flex flex-col justify-center items-center gap-3">
             <div className="stroke animate rounded-full w-60 h-60"></div>

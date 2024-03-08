@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import lang from "../utils/langConstants";
+import ZodiacContainer from "./ZodiacContainer";
 
 const Explore = () => {
 
@@ -9,14 +10,15 @@ const Explore = () => {
     "w-full cursor-pointer py-4 md:py-6 lg:py-8 md:text-lg lg:text-xl text-base font-semibold rounded-3xl shadow-md bg-white";
 
   return (
-    <div className="relative h-screen  pt-16 px-2 md:px-16 gap-4 overflow-x-hidden  flex flex-row justify-center items-start w-12/12">
-       <div className=" lg:w-5/12  w-full z-10  lg:flex  justify-center  items-start lg:items-start lg:pt-20 flex-col h-full text-white">
-        <span className="text-2xl uppercase  tracking-wider lg:text-6xl w-full font-medium text-purple-100">
+    <div className="w-12/12 flex flex-col">    
+    <div className="relative lg:h-screen pt-36 lg:pt-16 mx-6 md:px-10 gap-10  flex flex-col lg:flex-row justify-center items-center w-12/12">
+       <div className=" lg:w-6/12 w-full lg:pl-20 z-10 lg:flex flex justify-start  items-start lg:items-start lg:pt-28 flex-col h-full text-white">
+        <span className="text-2xl uppercase lg:text-start text-center tracking-widest lg:text-6xl w-full font-medium text-purple-100">
          {lang[Langkey].welcome}
         </span>
-        <span className="lg:text-[85px]  tracking-wide text-6xl font-bold text-purple-300"> {lang[Langkey].astroGPT}</span>
-        <span className="text-2xl uppercase tracking-[4.5px] lg:text-2xl w-full  font-medium text-purple-100">Your Horoscope Realm</span>
-        <span className="lg:py-4 pt-3 text-base tracking-wide  font-normal w-[80%] lg:items-start lg:text-left items-center flex text-center italic text-zinc-300">
+        <span className="lg:text-[85px]  tracking-wide text-4xl font-bold py-3 text-purple-300"> {lang[Langkey].astroGPT}</span>
+        <span className="text-xl uppercase lg:text-start text-center  tracking-[4.5px]  lg:text-2xl w-full  font-medium text-purple-100">Your Horoscope Realm</span>
+        <span className="lg:py-4 pt-1.5 lg:pt-3 text-sm lg:text-base tracking-wider  font-normal w-full lg:w-[80%] lg:items-start lg:text-left items-center flex text-center italic text-zinc-300">
           {lang[Langkey].loginDescription}
         </span>
         <div className="flex flex-row gap-3">
@@ -33,11 +35,14 @@ const Explore = () => {
          </button>
          </div>
       </div>
-      <div className=" relative flex  justify-center items-center w-6/12 h-screen">
-        <img className="opacity-90 w-[50%] z-10" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand.png"></img>
-        <img className="absolute w-[90%]  hand opacity-100" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand_bg.png"></img>
+      <div className="relative flex justify-center h-[35vh] items-center lg:pt-0 lg:w-6/12 lg:h-screen">
+        <img className="opacity-90 lg:w-[50%] w-[30%] z-10" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand.png"></img>
+        <img className="absolute lg:w-[90%]  w-[60%] hand opacity-100" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand_bg.png"></img>
       </div>
     </div>
+    <ZodiacContainer/>
+    </div>
+
   );
 };
 export default Explore;

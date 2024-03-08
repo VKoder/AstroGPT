@@ -7,7 +7,7 @@
   margin: 0;
   box-sizing: border-box;
   scrollbar-width: 0;
-  scroll-behavior: smooth;
+  
 }
 *::selection {
   background-color: white;
@@ -15,7 +15,7 @@
 }
 
 *::-webkit-scrollbar {
-  display: block;
+  display: none;
   background-color: #040404;
   width: 0.4vw;
   z-index: 99;
@@ -24,6 +24,12 @@
   background-color: rgb(109, 30, 166);;
   border-radius: 2vw; 
 }
+@media (max-width: 400px) {
+  *::-webkit-scrollbar-thumb {
+    display: none;
+  }
+}
+
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

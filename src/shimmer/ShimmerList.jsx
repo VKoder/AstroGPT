@@ -3,7 +3,7 @@ import ShimmerCard from "./ShimmerCard";
 const ShimmerList = () => {
   return (
     <div className="w-full bg-zinc-900">
-    <div className=" h-full w-12/12 lg:px-20 px-6 py-5 lg:py-28 flex justify-start items-start flex-col">
+    <div className=" h-full w-12/12 lg:px-20 px-6  lg:py-28 py-24 flex justify-start items-start flex-col">
       <div className="flex flex-row w-full justify-between items-start">
         <span className="h-10 rounded-3xl stroke animate bg-gray-800 w-80"></span>
       </div>
