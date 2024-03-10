@@ -42,9 +42,9 @@ const LoginForm = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        toast.success("Login successful!", {
+        toast.success("Welcome to AstroGPT!", {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -80,6 +80,7 @@ const LoginForm = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
+        console.log(user)
         updateProfile(user, {
           displayName: name.current.value,
         })
@@ -95,10 +96,10 @@ const LoginForm = () => {
           });
         toast.success("Welcome to AstroGPT!", {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 10000,
           hideProgressBar: false,
           closeOnClick: true,
-          pauseOnHover: true,
+          pauseOnHover: false,
           draggable: true,
           progress: undefined,
           theme: "dark",

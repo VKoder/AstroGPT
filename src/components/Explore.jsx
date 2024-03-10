@@ -1,16 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/langConstants";
 import ZodiacContainer from "./ZodiacContainer";
+import TopAstro from "./TopAstro";
+import { useEffect, useState } from "react";
+import { addChat } from "../store/AstroSlice";
 
 const Explore = () => {
 
+  const [TopAstro,setTopAstro] = useState()
+  const dispatch = useDispatch()
    const Langkey = useSelector(store => store.configApp.lang)
 
     const btnCSS =
-    "w-full cursor-pointer py-4 md:py-6 lg:py-8 md:text-lg lg:text-xl text-base font-semibold rounded-3xl shadow-md bg-white";
+    "w-full cursor-pointer py-4 md:py-6 lg:py-8 md:text-lg lg:text-xl text-base font-semibold rounded-3xl shadow-md bg-white"
 
   return (
-    <div className="w-12/12  overflow-x-hidden flex flex-col">    
+    <div className="w-12/12  flex flex-col">    
     <div className="relative lg:h-screen pt-36 lg:pt-16 mx-6 md:px-10 gap-10  flex flex-col lg:flex-row justify-center items-center w-12/12">
        <div className=" lg:w-6/12 w-full lg:pl-20 z-10 lg:flex flex lg:justify-start justify-center items-center lg:items-start lg:pt-28 flex-col h-full text-white">
         <span className="text-2xl uppercase lg:text-start text-center tracking-widest lg:text-6xl w-full font-medium text-purple-100">
@@ -40,7 +45,9 @@ const Explore = () => {
         <img className="absolute lg:w-[90%]  w-[60%] hand opacity-100" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/hand_bg.png"></img>
       </div>
     </div>
+   
     <ZodiacContainer/>
+   
     </div>
 
   );

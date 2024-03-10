@@ -9,6 +9,7 @@ import Following from "./Following";
 import Chatbot from "./Chatbot";
 import AstroKundli from "./AstroKundli";
 import LoginForm from "./LoginForm";
+import Horoscope from "./Horoscope";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
@@ -50,6 +51,10 @@ const Body = () => {
             path:"/kundligpt",
             element:<AstroKundli/>
           },
+          {
+            path:"/horoscope/:id",
+            element:<Horoscope/>
+          },
       ])
        
         
@@ -59,6 +64,7 @@ const Body = () => {
       path:"/login",
       element:<LoginForm/>
     },
+   
    
   ]);
 

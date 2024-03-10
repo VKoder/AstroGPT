@@ -31,7 +31,7 @@ const Header = () => {
         // Sign-out successful.
         toast.success("Logged out successfully.", {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,

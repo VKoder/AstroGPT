@@ -9,8 +9,9 @@ const userSlice = createSlice({
         },
         removeUser:(state,action)=>{
             return null;
-        },
+        }
+      
     }
 })
-export const {addUser,removeUser} = userSlice.actions;
+export const {addUser,removeUser, addLimit} = userSlice.actions;
 export default userSlice.reducer;
