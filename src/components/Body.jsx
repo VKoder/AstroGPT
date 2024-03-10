@@ -10,6 +10,7 @@ import Chatbot from "./Chatbot";
 import AstroKundli from "./AstroKundli";
 import LoginForm from "./LoginForm";
 import Horoscope from "./Horoscope";
+import FootIcons from "./FootIcons";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
@@ -19,6 +20,7 @@ const Body = () => {
       element: (
         <>
         <Header/>
+        <FootIcons/>
           <Outlet />
         </>
       ),

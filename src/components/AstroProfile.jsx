@@ -5,8 +5,9 @@ import { PROFILE_BG, PROFILE_IMG } from "../utils/constants";
 import ShimmerProfile from "../shimmer/ShimmerProfile";
 import { toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addFollow } from "../store/followSlice";
+import { addFollow, removeFollow } from "../store/followSlice";
 import { useState } from "react";
+import { addForm } from "../store/configAppSlice";
 
 const AstroProfile = () => {
   const [follow, setfollow] = useState(false);
@@ -17,6 +18,7 @@ const AstroProfile = () => {
   const dispatch = useDispatch();
 
   const astroProfile = useSelector((store) => store.astro.astroProfile);
+  const user = useSelector((store) => store.user);
 
   if (!astroProfile) {
     return <ShimmerProfile />;
@@ -24,9 +26,25 @@ const AstroProfile = () => {
   const { data } = astroProfile;
 
   const handlefollow = (data) => {
+    if (!user) {
+      toast.error("You're not logged In", {
+        position: "top-right",
+        autoClose: 1200,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      dispatch(addForm());
+      return; // Exit the function
+    }
+
     toast("🔥 Followed " + data?.name, {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
@@ -37,11 +55,21 @@ const AstroProfile = () => {
     });
 
     dispatch(addFollow(data));
-
     setfollow(!follow)
   };
   const handleUnfollow = () => {
-
+    toast("🔥 Unfollowed " + data?.name, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+    dispatch(removeFollow(data))
     setfollow(!follow)
 
   };

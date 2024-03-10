@@ -18,7 +18,7 @@ const Header = () => {
   const form = useSelector((store) => store.configApp.form);
   const navigate = useNavigate();
   const liCSS =
-    "font-semibold uppercase tracking-wide text-sm pr-5 cursor-pointer";
+    "font-semibold uppercase tracking-wide text-sm px-2 cursor-pointer  pb-2";
   const dispatch = useDispatch();
 
   const handleform = () => {
@@ -79,10 +79,10 @@ const Header = () => {
             ></img>
           </Link>
         </div>
-        <div className="text-white">
+        <div className="text-white hidden lg:block">
           <Link to={"/chat"}>
             {" "}
-            <span className={liCSS}>Chat</span>
+            <span className={liCSS }>Chat</span>
           </Link>
           <Link to={"/call"}>
             {" "}
@@ -111,9 +111,11 @@ const Header = () => {
             user && <span>{user?.displayName}</span>
           }
         </div>
+
+
         <div>
           <select
-            className="pl-2  py-2 mx-4 text-purple-200 bg-purple-800 rounded-md bg-opacity-80"
+            className="pl-1 cursor-pointer py-2 mx-2 text-purple-200 bg-purple-800 rounded-md bg-opacity-80"
             onChange={handleLang}
           >
             {MULTI_LANG.map((lang) => (

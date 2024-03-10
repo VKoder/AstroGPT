@@ -71,6 +71,35 @@
   background-color: rgba(45, 6, 78, 0.564);
 }
 
+
+
+
+.li::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* background: linear-gradient(to bottom right, rgba(89, 21, 134, 0.783), rgba(92, 6, 138, 0.82), rgba(47, 0, 78, 0.783)); */
+  border-bottom: 2px solid orange;
+  z-index: 1;
+  
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.li:hover::before,
+.li:focus::before{
+  transform: scaleX(1);
+  transition: transform 280ms ease-in-out;
+}
+.li{
+  z-index: 1;
+  /* border: 2px solid orange; */
+}
+
+
 @keyframes shimmer {
   from {
     background-position: -1000px 0;
