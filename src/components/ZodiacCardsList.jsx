@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom'
 const ZodiacCardsList = () => {
   return (
     
-              <div className='flex flex-col w-full lg:mt-0 lg:mb-10 my-3 justify-center items-center h-full relative'>
+              <div className='flex flex-col w-full lg:mt-0 lg:mb-10  justify-center items-center h-full relative'>
                  <img alt='cycle' className='hidden lg:block absolute  w-80 opacity-95' src="https://www.saisadhanaastrologycentre.com/assets/img/about-1-1.webp"></img>
                  <img alt='cycle' className='absolute hidden lg:block -z-10 opacity-55 hand w-[450px]' src='https://kamleshyadav.com/html/astrology/version-3/assets/images/service_img2.png'></img>
         <div className='flex justify-center lg:gap-10 items-center lg:py-3  w-full h-full flex-wrap'>

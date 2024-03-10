@@ -14,7 +14,7 @@ const Following = () => {
     dispatch(clearFollow());
   };
   const handleClear = () =>{
-    dispatch(removeFollow())
+    dispatch(clearFollow())
   }
 
   return (
@@ -27,9 +27,9 @@ const Following = () => {
       {data.length === 0 && 
         <div className="flex justify-center pt-20 items-center w-full h-full ">
             <div className=" flex flex-col  justify-center items-center w-full">
-                <img alt="unfollow" className="w-[400px]" src='https://cdni.iconscout.com/illustration/premium/thumb/male-pandit-working-on-laptop-2775580-2319301.png'></img>
-                <span className="text-2xl text-purple-200 font-semibold tracking-wide pt-6 pb-2">You are not following anyone!</span>
-               <Link to="/chat"> <button className="tracking-wider cursor-pointer px-6 font-medium text-lg py-1.5 transition-all  bg-purple-900 text-white border-2 hover:bg-transparent rounded-md uppercase  border-purple-900  ">Explore Astrologers</button></Link>
+                <img alt="unfollow" className="lg:w-[400px] w-72" src='https://cdni.iconscout.com/illustration/premium/thumb/male-pandit-working-on-laptop-2775580-2319301.png'></img>
+                <span className="text-lg lg:text-2xl text-purple-200 font-semibold tracking-wide pt-3 lg:pt-6 pb-2">You are not following anyone!</span>
+               <Link to="/chat"> <button className="tracking-wider cursor-pointer px-4 lg:px-6 font-medium text-sm lg:text-lg py-1 lg:py-1.5 transition-all  bg-purple-900 text-white border-2 hover:bg-transparent rounded-md uppercase  border-purple-900  ">Explore Astrologers</button></Link>
             </div>
       </div>
       }
