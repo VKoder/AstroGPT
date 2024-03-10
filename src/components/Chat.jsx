@@ -34,15 +34,15 @@ const Chat = () => {
         <div  className="relative w-12/12 ">
             <img alt="bg" className="h-screen w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"></img>
            <div className="lg:pt-6 pt-3 px-4 lg:px-20 md:px-16  flex flex-col justify-center  items-start">
-            <div className="w-full flex lg:flex-row flex-col justify-between mt-20 mb-4 items-start lg:items-center">
-                <span className="text-3xl lg:text-4xl lg:py-0 pb-4 text-purple-200 font-bold">{lang[Langkey].chat}</span>
-                <div className="flex py-2  relative items-center">
+            <div className="w-full flex lg:flex-row flex-col justify-between mt-20 lg:mb-4  mb-3 items-start lg:items-center">
+                <span className="text-3xl lg:text-4xl lg:py-0  text-purple-200 font-bold">{lang[Langkey].chat}</span>
+                <div className="flex pt-3 w-full relative items-center">
                     <input 
                         type="text" 
                         placeholder={lang[Langkey].search}
                         value={search} 
                         onChange={handleSearch}
-                        className="border outline-none w-[100%] lg:w-80 placeholder-purple-800 placeholder-opacity-50 text-base lg:text-lg rounded-full bg-purple-300 text-purple-950 outline-1 outline-purple-700 border-purple-400 pl-9  py-0.5  lg:py-1.5 px-2"
+                        className="border outline-none w-full lg:w-80 placeholder-purple-800 placeholder-opacity-50 text-base lg:text-lg rounded-full bg-purple-300 text-purple-950 outline-1 outline-purple-700 border-purple-400 pl-9  py-0.5  lg:py-1.5 px-2"
                     ></input>
                     <i className="ri-search-line text-purple-800  absolute text-sm lg:text-base left-3"></i>
                 </div>

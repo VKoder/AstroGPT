@@ -126,7 +126,7 @@ const Header = () => {
 
         <div>
           <select
-            className="pl-1 cursor-pointer py-2 mx-2 text-purple-200 bg-purple-800 rounded-md bg-opacity-80"
+            className="lg:pl-1 pl-0.5 cursor-pointer lg:text-base text-sm py-1 lg:py-2 lg:mx-2 mx-0.5 text-purple-200 bg-purple-800 rounded-md bg-opacity-80"
             onChange={handleLang}
           >
             {MULTI_LANG.map((lang) => (

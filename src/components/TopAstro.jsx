@@ -7,7 +7,7 @@ const TopAstro = ({ list }) => {
   return (
     <div className="w-12/12 my-6 py-10 flex flex-col justify-center items-center">
       <div className="flex justify-center items-center flex-col">
-        <span className="lg:text-3xl text-2xl text-center lg:font-semibold  font-[600] text-purple-300 pb-2 tracking-wider opacity-90 lg:tracking-normal">
+        <span className="lg:text-3xl text-2xl text-center lg:font-semibold  font-[600] text-purple-300 lg:pb-2 pb-1.5  tracking-wider opacity-90 lg:tracking-normal">
           Our Astrologers
         </span>
         <img

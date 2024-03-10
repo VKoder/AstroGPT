@@ -54,7 +54,7 @@ const FootIcons = () => {
     "font-light uppercase tracking-wide text-[10px] text-purple-200 cursor-pointer  hover:text-purple-400 focus:text-purple-400  ";
 
   return (
-    <div className=" flex flex-row  gap-1 justify-evenly px-4 py-2 items-center bg-purple-950 bg-opacity-95 fixed w-full lg:hidden bottom-0 z-50">
+    <div className=" flex flex-row  gap-1 justify-evenly px-4 py-2 items-center bg-purple-950 fixed w-full lg:hidden bottom-0 z-50">
     <Link to={"/"}>
       {" "}
       <div className='flex flex-col justify-center  items-center px-2'>

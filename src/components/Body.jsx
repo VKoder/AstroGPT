@@ -4,7 +4,6 @@ import Chat from "./Chat";
 import Call from "./Call";
 import AstroProfile from "./AstroProfile";
 import Header from "./Header";
-import LoginPage from "./LoginPage";
 import Following from "./Following";
 import Chatbot from "./Chatbot";
 import AstroKundli from "./AstroKundli";
