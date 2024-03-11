@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import useAstroProfile from "../custom hooks/useAstroProfile";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { PROFILE_BG, PROFILE_IMG } from "../utils/constants";
 import ShimmerProfile from "../shimmer/ShimmerProfile";
 import { toast, Bounce } from "react-toastify";
@@ -78,14 +78,19 @@ const AstroProfile = () => {
   };
   
   return (
-    <div className="pt-24 relative">
+    <div className="lg:pt-24 pt-16 relative">
          { Bot && <Chatbot/>}
        <img alt="bg"
         className="h-screen w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40 "
         src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"
       ></img>
-      <div className="w-12/12  flex flex-col mx-4 lg:mx-16 text-purple-300">
-        <div className="flex relative shadow-sm lg:gap-20 gap-8 w-full text-purple-300 shadow-zinc-700  transition-all hover:bg-opacity-55  bg-purple-950 bg-opacity-55 lg:flex-row flex-col px-8 py-8    lg:mt-8  rounded-2xl ">
+      <div className="w-12/12  flex flex-col mx-4 lg:mx-16 ">
+        <div className="flex flex-row justify-start lg:pb-0 pb-2 pl-2 lg:pl-4 items-center gap-0.5 lg:gap-1">
+          <Link to={"/"}> <span className="font-medium uppercase flex flex-row text-purple-300 items-center justify-center text-sm lg:text-base"><i className="pr-2 text-2xl ri-home-4-fill"></i>HOME</span></Link>
+          <span><i className="text-xl lg:text-2xl text-purple-200 ri-arrow-right-s-line"></i></span>
+          <span className="lg:text-xl text-base text-purple-200 font-normal">{data?.name}</span>
+        </div>
+        <div className="flex relative shadow-sm lg:gap-20 gap-8 w-full text-purple-300 shadow-zinc-700  transition-all hover:bg-opacity-55  bg-purple-950 bg-opacity-55 lg:flex-row flex-col px-8 py-8    lg:mt-5  rounded-2xl ">
           <div className="w-full lg:w-3/12  gap-4 flex-col h-full flex justify-center items-start">
             <div className="relative w-full  overflow-hidden h-full flex justify-center items-start">
               <img className="rounded-full lg:w-96 w-48" src={PROFILE_BG} alt="Bg"></img>
