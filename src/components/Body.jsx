@@ -10,6 +10,7 @@ import AstroKundli from "./AstroKundli";
 import LoginForm from "./LoginForm";
 import Horoscope from "./Horoscope";
 import FootIcons from "./FootIcons";
+import Loading from "../utils/Loading";
 
 const Body = () => {
   const appLayout = createBrowserRouter([

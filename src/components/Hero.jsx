@@ -3,6 +3,7 @@ import Explore from "./Explore";
 import { useEffect, useState } from "react";
 import TopAstro from "./TopAstro";
 import UsersTag from "./UsersTag";
+import Chatbot from "./Chatbot";
 
 const Hero =() => {
 
@@ -24,6 +25,9 @@ const Hero =() => {
         className="h-screen brightness-75 w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40"
         src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"
       ></img>
+      <div className="w-full">
+      <Chatbot/>
+      </div>
             <Explore/>
             <UsersTag/>
             <TopAstro list={topAstro}/>

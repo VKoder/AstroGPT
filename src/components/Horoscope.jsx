@@ -22,9 +22,7 @@ const Horoscope = () => {
       <div className="pt-20">
       <span className="text-red-400">Horoscope</span>
       </div>
-      {/* <div className="w-12/12">
-        <TopAstro/>
-      </div> */}
+     
     </div>
   );
 };

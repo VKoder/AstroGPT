@@ -8,7 +8,6 @@ import { addUser, removeUser } from "../store/userSlice";
 import { toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { clearFollow, removeFollow } from "../store/followSlice";
-import Fetch from "./Fetch";
 import { MULTI_LANG } from "../utils/constants";
 import { addForm, addLang, removeForm } from "../store/configAppSlice";
 import LoginForm from "./LoginForm";
@@ -22,17 +21,6 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleform = () => {
-    toast.info("Scroll to Top for Login", {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Bounce,
-    });
     dispatch(addForm());
   };
 

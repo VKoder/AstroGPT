@@ -8,12 +8,12 @@ import { toast, Bounce } from "react-toastify";
 
 const Chatbot = () => {
   const input = useRef();
-  const [result, setresult] = useState();
+  const [result, setresult] = useState(["AstroBot: Hi"]);
   const [apiLimit, setapiLimit] = useState(1);
+
 
   const user = useSelector((store) => store.user);
   const form = useSelector((store) => store.configApp.form);
-  // const Limit = useSelector((store)=> store.user.limit)
   const dispatch = useDispatch();
 
 
@@ -32,21 +32,11 @@ const Chatbot = () => {
         theme: "dark",
         transition: Bounce,
       });
-      toast.info("Scroll to Top for Login", {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
+     
       dispatch(addForm());
-      return; // Exit the function
+      return; 
     }
-    if (apiLimit > 1) {
+    if (apiLimit > 6) {
       dispatch(addLimit(false))
       toast.error("Please come tommorow Api limit excedd", {
         position: "top-right",
@@ -68,52 +58,52 @@ const Chatbot = () => {
       messages: [{ role: "user", content: gptSearch }],
       model: "gpt-3.5-turbo",
     });
-    console.log(data?.choices?.[0]?.message?.content);
-    setresult(data?.choices?.[0]?.message?.content);
+    const Responce = data?.choices?.[0]?.message?.content;
+
+    setresult([...result,"You: "+input.current.value,"AstroBot: " +Responce])
     input.current.value = "";
+    
     setapiLimit(apiLimit + 1)
       };
  
   return (
-    <div className="pt-24  relative z-10 px-16 text-white w-12/12">
-      <img
-        alt="bg"
-        className="h-screen brightness-90 w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40"
-        src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"
-      ></img>
-      <div className="h-screen w-full bg-gray-500"></div>
-
-      {console.log(apiLimit + "api limit")}
-      <div className="w-12/12 flex bg-red-300 justify-between items-center h-screen">
-        <div className="w-4/12 bg-purple-800 h-[70vh]"></div>
-
-        <div className="w-7/12 bg-purple-800 relative h-[80vh]">
-          <div className="w-full bg-purple-950 py-4 px-10">
-            <span className="text-2xl text-purple-200 font-semibold tracking-wide">
+    <div className="lg:pt-20 fixed w-full z-40 pt-[20%] h-screen flex justify-center items-start  px-2 lg:px-16 bg-purple-950 bg-opacity-65 w-12/12">
+      <div className="lg:w-[50%] w-full rounded-xl overflow-hidden relative h-[80vh]">
+          <div className="w-full flex flex-row  justify-between items-center bg-purple-950 py-3 lg:py-4 px-4 lg:px-10">
+            <span className="lg:text-2xl text-xl text-purple-200 font-semibold tracking-wide">
               AstroBot
             </span>
+            <i className="text-xl lg:text-3xl text-purple-300 ri-close-fill"></i>
           </div>
-          <div className="w-full h-[60vh] bg-orange-800">
-            <span className="text-purple-200 text-lg">{result}</span>
+          <div className="w-full overflow-y-scroll px-4 py-4 flex flex-col justify-start items-start lg:px-10 pb-28 h-[75vh] bg-purple-950 bg-opacity-30 ">
+           
+            {
+         result?.map((result) =>   
+         <div className="lg:px-4 px-2 mb-2 lg:mb-4 lg:tracking-wide tracking-wider rounded-lg lg:rounded-md font-normal lg:font-medium lg:py-2 py-1.5 bg-purple-600  text-white">
+<span className="text-purple-50 text-sm lg:text-base">{result}</span>
+         </div> )
+            }
+            
           </div>
-          <div className="bg-gray-400 absolute px-10 w-full bottom-2">
-            <form onSubmit={(e) => e.preventDefault()} className="">
+          <div className=" absolute flex justify-center bg-purple-950 items-center px-4 lg:px-10 w-full bottom-0 py-4 bg-opacity-95">
+            <form onSubmit={(e) => e.preventDefault()} className="w-full relative  flex justify-center items-center">
               <input
-                className="w-10/12 py-2 text-purple-700 font-medium  outline-none px-3 text-lg rounded-lg"
+                className="w-full py-2  text-purple-700 font-medium  outline-none px-3 text-base lg:text-lg rounded-xl"
                 type="text"
                 placeholder="Enter Horoscope"
                 ref={input}
-              ></input>
+              >
+                  
+              </input>
               <button
-                className="px-5 py-2 bg-red-500 rounded-xl"
+                className="px-4 py-1 lg:py-1.5 absolute rounded-e-xl right-0 bg-purple-500 "
                 onClick={handleSearch}
               >
-                Send
+               <i className="text-2xl ri-send-plane-2-fill"></i>
               </button>
             </form>
           </div>
         </div>
-      </div>
     </div>
   );
 };

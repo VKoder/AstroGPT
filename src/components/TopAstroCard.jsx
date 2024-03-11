@@ -1,9 +1,9 @@
 import React from 'react'
-import { PROFILE_BG, PROFILE_IMG } from '../utils/constants'
+import {  PROFILE_IMG } from '../utils/constants'
 
 const TopAstroCard = ({info}) => {
   return (
-    <div className='lg:px-6 px-3 lg:py-4 py-2 lg:pb-8 pb-4 lg:mx-2 mx-1 lg:my-4 my-1 hover:scale-105 transition-all hover:bg-opacity-90 bg-purple-950 bg-opacity-70 rounded-2xl'>
+    <div className='lg:px-6 px-3 lg:py-4 py-2 lg:pb-8 pb-4 lg:mx-2 mx-1 lg:my-4 my-1 hover:scale-105 transition-all hover:bg-opacity-90 bg-purple-950 bg-opacity-55 rounded-2xl'>
         <div className='lg:w-[150px] w-[100px]  flex-col flex justify-center items-center'>
           
         <div className="w-10/12  h-full py-0.5 lg:py-2  flex flex-col justify-center  items-center">

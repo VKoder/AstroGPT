@@ -115,23 +115,13 @@ const LoginForm = () => {
   };
 
   const handleform =()=>{
-    toast.info("Scroll to Top for Login", {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Bounce,
-    });
+   
     dispatch(addForm())
   }
 
   return (
-    <div className="h-screen w-12/12 flex justify-center px-6 lg:py-20 left-0 items-center z-[100] bg-purple-950 transition-all bg-opacity-50">
-      <div className="bg-zinc-950 shadow-sm w-full px-10 py-12 lg:shadow-purple-800 rounded-2xl transition-all bg-opacity-90  sm:w-[70%] lg:w-[33%]">
+    <div className="h-screen w-full fixed flex justify-center px-6 lg:py-20 left-0 items-center z-[100] bg-purple-950 transition-all bg-opacity-50">
+      <div className="bg-zinc-950 shadow-sm w-full px-10  py-10 lg:shadow-purple-800 rounded-2xl lg:mt-20 transition-all bg-opacity-90  sm:w-[70%] lg:w-[33%]">
       <form onSubmit={(e) => e.preventDefault()} className="relative flex flex-col">
         {signIn ? (
           <h2 className="py-4 text-4xl text-purple-200 font-bold">

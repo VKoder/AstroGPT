@@ -14,17 +14,7 @@ const FootIcons = () => {
 
     const handleform = () => {
         dispatch(addForm());
-          toast.info("Scroll to Top for Login", {
-              position: "top-center",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: true,
-              progress: undefined,
-              theme: "dark",
-              transition: Bounce,
-            });
+        
       };
     
       const handleSignOut = () => {
