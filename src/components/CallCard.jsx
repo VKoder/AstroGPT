@@ -4,7 +4,7 @@ import ShimmerList from "../shimmer/ShimmerList";
 import lang from "../utils/langConstants";
 import { useSelector } from "react-redux";
 
-const Card = ({ info }) => {
+const CallCard = ({ info }) => {
 
     const Langkey = useSelector(store => store.configApp.lang)
 
@@ -71,11 +71,11 @@ const Card = ({ info }) => {
         </div>
         <div className="">
           <button className="px-5 py-1 hover:bg-purple-500 hover:text-white  rounded-md  text-sm border text-purple-400  border-zinc-400">
-            Chat
+            Call
           </button>
         </div>
       </div>
     </div>
   );
 };
-export default Card;
+export default CallCard;

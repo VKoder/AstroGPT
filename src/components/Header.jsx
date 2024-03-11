@@ -9,7 +9,7 @@ import { toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { clearFollow, removeFollow } from "../store/followSlice";
 import { MULTI_LANG } from "../utils/constants";
-import { addForm, addLang, removeForm } from "../store/configAppSlice";
+import { addBot, addForm, addLang, removeForm } from "../store/configAppSlice";
 import LoginForm from "./LoginForm";
 
 const Header = () => {
@@ -65,6 +65,9 @@ const Header = () => {
     dispatch(addLang(e.target.value));
   };
 
+  const handlebot =()=>{
+    dispatch(addBot())
+  }
   return (
     <>
       <div className=" z-50 fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  py-1 flex-row flex items-center justify-between  px-2 md:px-10 ">
@@ -100,9 +103,9 @@ const Header = () => {
           <Link to={"/following"} className={liCSS}>
             <span>Following</span>
           </Link>
-          <Link to={"/chatbot"} className={liCSS}>
-            <span>Chat bot</span>
-          </Link>
+          
+            <span  className={liCSS} onClick={handlebot}>Chat bot</span>
+          
           <Link to={"/kundligpt"} className={liCSS}>
             <span>Kundli GPT</span>
           </Link>

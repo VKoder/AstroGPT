@@ -14,7 +14,7 @@ const ZodiacContainer = () => {
           ></img>
         </div>
         <div className="w-full flex lg:justify-center items-center pt-4 lg:text-center text-left lg:pt-8 ">
-            <span className="text-purple-200 opacity-90 font-normal lg:text-lg tracking-wider text-[15px] lg:tracking-wide">Dive into the mystical world of astrology with our comprehensive horoscope section. Discover the secrets written in the stars and unlock insights into your personality, relationships, and future. Whether you're a seasoned astrology enthusiast or just curious about what the cosmos has in store for you, our horoscope section is your guide to understanding the celestial forces shaping your life.</span>
+            <span className="text-purple-200 lg:w-10/12 opacity-90 font-normal lg:text-lg tracking-wider text-[15px] lg:tracking-wide">Dive into the mystical world of astrology with our comprehensive horoscope section. Discover the secrets written in the stars and unlock insights into your personality, relationships, and future. Whether you're a seasoned astrology enthusiast or just curious about what the cosmos has in store for you, our horoscope section is your guide to understanding the celestial forces shaping your life.</span>
         </div>
       </div>
       <ZodiacCardsList />

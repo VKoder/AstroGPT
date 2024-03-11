@@ -6,6 +6,7 @@ const configAppSlice = createSlice({
         lang : "en",
         form: false,
         Limit: null,
+        Bot: false,
     },
     reducers:{
         addLang : (state,action)=>{
@@ -20,10 +21,13 @@ const configAppSlice = createSlice({
         addLimit:(state, action)=>{
             state.Limit =  action.payload;
         },
+        addBot:(state,action)=>{
+            state.Bot = !state.Bot
+        }
        
         
     }
 })
 
 export default configAppSlice.reducer;
-export const {addLang, addForm, removeForm, addLimit} = configAppSlice.actions;
+export const {addLang, addForm, removeForm, addLimit,addBot} = configAppSlice.actions;

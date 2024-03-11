@@ -6,9 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Bounce, toast } from "react-toastify";
 import { addForm } from "../store/configAppSlice";
 import Click from "../image/Click.jpeg";
+import Chatbot from "./Chatbot";
 
 const AstroKundli = () => {
   const user = useSelector((store) => store.user);
+  const Bot = useSelector(store => store.configApp.Bot)
   const dispatch = useDispatch();
 
   const name = useRef();
@@ -101,7 +103,8 @@ const AstroKundli = () => {
   const maindivCSS = "flex flex-row justify-between items-center gap-8 my-6";
 
   return (
-    <div className="pt-14 relative w-12/12 ">
+    <div className="relative pt-12 w-12/12 ">
+       { Bot && <Chatbot/>}
       <img
         alt="bg"
         className="h-screen  brightness-90 w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40"
@@ -114,7 +117,7 @@ const AstroKundli = () => {
       >
         <div className="lg:w-[28%] w-12/12 flex justify-center items-center relative">
           <img
-            className="lg:w-[100%] w-40  z-20"
+            className="lg:w-[100%] w-40  z-10"
             src="https://www.saisadhanaastrologycentre.com/assets/img/about-1-1.webp"
           ></img>
           <img

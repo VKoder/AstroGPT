@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { PROFILE_IMG } from "../utils/constants";
 import { clearFollow, removeFollow } from "../store/followSlice";
 import { Link } from "react-router-dom";
+import Chatbot from "./Chatbot";
 
 const Following = () => {
   const dispatch = useDispatch();
 
   const data = useSelector((store) => store.follow.follow);
+  const Bot = useSelector(store => store.configApp.Bot)
   console.log(data);
 
   const handleUnfollow = () => {
@@ -19,6 +21,7 @@ const Following = () => {
 
   return (
     <div className="relative h-screen  w-12/12">
+{ Bot && <Chatbot/>}
       <img
         alt="bg"
         className="h-screen brightness-90 w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40"

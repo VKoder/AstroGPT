@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { addFollow, removeFollow } from "../store/followSlice";
 import { useState } from "react";
 import { addForm } from "../store/configAppSlice";
+import Chatbot from "./Chatbot";
 
 const AstroProfile = () => {
   const [follow, setfollow] = useState(false);
@@ -16,7 +17,8 @@ const AstroProfile = () => {
   useAstroProfile(id);
 
   const dispatch = useDispatch();
-
+  
+  const Bot = useSelector(store => store.configApp.Bot)
   const astroProfile = useSelector((store) => store.astro.astroProfile);
   const user = useSelector((store) => store.user);
 
@@ -74,8 +76,10 @@ const AstroProfile = () => {
     setfollow(!follow)
 
   };
+  
   return (
     <div className="pt-24 relative">
+         { Bot && <Chatbot/>}
        <img alt="bg"
         className="h-screen w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40 "
         src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"

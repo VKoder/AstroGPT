@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addForm } from '../store/configAppSlice';
+import { addBot, addForm } from '../store/configAppSlice';
 import { auth } from '../utils/firebase';
 import { Bounce, toast } from 'react-toastify';
 import { clearFollow } from '../store/followSlice';
@@ -34,17 +34,21 @@ const FootIcons = () => {
             });
           })
           .catch((error) => {
-            // An error happened.
+            
           });
     
         dispatch(clearFollow());
       };
 
+      const handlebot =()=>{
+        dispatch(addBot())
+      }
+
     const liCSS =
-    "font-light uppercase tracking-wide text-[10px] text-purple-200 cursor-pointer  hover:text-purple-400 focus:text-purple-400  ";
+    "font-light uppercase tracking-wide text-[10px]  text-purple-200 cursor-pointer  hover:text-purple-400 focus:text-purple-400  ";
 
   return (
-    <div className=" flex flex-row  gap-1 justify-evenly px-4 py-2 items-center bg-purple-950 fixed w-full lg:hidden bottom-0 z-50">
+    <div className=" flex flex-row foot  gap-1 justify-evenly px-4 py-2 items-center bg-purple-950 fixed w-full lg:hidden bottom-0 z-50">
     <Link to={"/"}>
       {" "}
       <div className='flex flex-col justify-center  items-center px-2'>
@@ -59,12 +63,12 @@ const FootIcons = () => {
       <span className={liCSS}>Following</span>
       </div>
     </Link>
-    <Link to={"/chatbot"} className={liCSS}>
-    <div className='flex flex-col justify-center items-center px-2'>
+    
+    <div className='flex flex-col justify-center items-center px-2' onClick={handlebot}>
       <span><i className="ri-robot-2-fill text-lg  hover:text-purple-400 focus:text-purple-400  text-purple-100"></i></span>
       <span className={liCSS}>Bot</span>
       </div>
-    </Link>
+   
     <Link to={"/kundligpt"} className={liCSS}>
     <div className='flex flex-col justify-center  items-center px-2'>
       <span><i className="ri-calendar-fill text-lg  hover:text-purple-400 focus:text-purple-400 text-purple-100"></i></span>
@@ -72,16 +76,16 @@ const FootIcons = () => {
       </div>
     </Link>
     {user ? (
-         <div className='flex flex-col justify-center  items-center px-2'>
+         <div className='flex flex-col justify-center  items-center px-2' onClick={handleSignOut}>
              <span><i className="ri-logout-box-fill text-lg  hover:text-purple-400 focus:text-purple-400 text-purple-100"></i></span>
-            <span onClick={handleSignOut} className={liCSS}>
+            <span  className={liCSS}>
             Signout
             </span>
             </div>
           ) : (
-            <div className='flex flex-col justify-center  items-center px-2'>
+            <div className='flex flex-col justify-center  items-center px-2' onClick={handleform}>
             <span><i className="ri-login-box-fill text-lg  hover:text-purple-400 focus:text-purple-400 text-purple-100"></i></span>
-            <span  onClick={handleform} className={liCSS}>
+            <span   className={liCSS}>
             Login
             </span>
             </div>

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CHAT_BOT } from "../utils/constants";
 import openai from "./../utils/openai";
 import React, { useRef, useState } from "react";
-import { addForm , addLimit} from "../store/configAppSlice";
+import { addBot, addForm , addLimit} from "../store/configAppSlice";
 import { toast, Bounce } from "react-toastify";
 
 
@@ -17,7 +17,9 @@ const Chatbot = () => {
   const dispatch = useDispatch();
 
 
-  
+  const handlebot =()=>{
+    dispatch(addBot())
+  }
 
   const handleSearch = async () => {
     if (!user) {
@@ -32,7 +34,7 @@ const Chatbot = () => {
         theme: "dark",
         transition: Bounce,
       });
-     
+      dispatch(addBot())
       dispatch(addForm());
       return; 
     }
@@ -67,25 +69,25 @@ const Chatbot = () => {
       };
  
   return (
-    <div className="lg:pt-20 fixed w-full z-40 pt-[20%] h-screen flex justify-center items-start  px-2 lg:px-16 bg-purple-950 bg-opacity-65 w-12/12">
-      <div className="lg:w-[50%] w-full rounded-xl overflow-hidden relative h-[80vh]">
-          <div className="w-full flex flex-row  justify-between items-center bg-purple-950 py-3 lg:py-4 px-4 lg:px-10">
+    <div className="lg:pt-20 fixed w-full top-0 z-20 lg:mb-0 mb:20 pt-[20%] h-screen flex justify-center items-start  px-2 lg:px-16  bg-zinc-950 bg-opacity-85 w-12/12">
+      <div className="lg:w-[50%] w-full rounded-xl overflow-hidden relative h-[75vh] lg:h-[80vh]">
+          <div className="w-full flex flex-row  justify-between items-center bg-opacity-95 bg-purple-700 py-3 lg:py-4 px-4 lg:px-10">
             <span className="lg:text-2xl text-xl text-purple-200 font-semibold tracking-wide">
               AstroBot
             </span>
-            <i className="text-xl lg:text-3xl text-purple-300 ri-close-fill"></i>
+            <i className="text-xl lg:text-3xl text-purple-300 ri-close-fill cursor-pointer" onClick={handlebot}></i>
           </div>
-          <div className="w-full overflow-y-scroll px-4 py-4 flex flex-col justify-start items-start lg:px-10 pb-28 h-[75vh] bg-purple-950 bg-opacity-30 ">
+          <div className="w-full overflow-y-scroll px-4 py-4 flex flex-col justify-start items-start lg:px-10 pb-28 h-[75vh] bg-purple-950 bg-opacity-90 ">
            
             {
-         result?.map((result) =>   
-         <div className="lg:px-4 px-2 mb-2 lg:mb-4 lg:tracking-wide tracking-wider rounded-lg lg:rounded-md font-normal lg:font-medium lg:py-2 py-1.5 bg-purple-600  text-white">
+         result?.map((result,index) =>   
+         <div key={index} className="lg:px-4 px-2 mb-2 lg:mb-4 lg:tracking-wide tracking-wider rounded-lg lg:rounded-md font-normal lg:font-medium lg:py-2 py-1.5 bg-purple-600  text-white">
 <span className="text-purple-50 text-sm lg:text-base">{result}</span>
          </div> )
             }
             
           </div>
-          <div className=" absolute flex justify-center bg-purple-950 items-center px-4 lg:px-10 w-full bottom-0 py-4 bg-opacity-95">
+          <div className=" absolute flex justify-center bg-purple-700 items-center px-4 lg:px-10 w-full bottom-0 py-4 bg-opacity-95">
             <form onSubmit={(e) => e.preventDefault()} className="w-full relative  flex justify-center items-center">
               <input
                 className="w-full py-2  text-purple-700 font-medium  outline-none px-3 text-base lg:text-lg rounded-xl"

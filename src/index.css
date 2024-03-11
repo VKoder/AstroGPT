@@ -71,7 +71,9 @@
   background-color: rgba(43, 5, 74, 0.753);
 }
 
-
+.foot{
+  box-shadow: 0px -4px 40px rgba(26, 26, 26, 0.712);
+}
 
 
 .li::before{
