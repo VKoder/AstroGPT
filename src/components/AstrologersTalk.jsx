@@ -1,21 +1,29 @@
 import { useDispatch, useSelector } from "react-redux";
-import { CHAT_BOT } from "../utils/constants";
+import { PROFILE_IMG, TALK_PROMPT } from "../utils/constants";
+import bg from "../image/bg1.jpg";
 import openai from "./../utils/openai";
 import React, { useRef, useState } from "react";
 import { addBot, addForm, addLimit } from "../store/configAppSlice";
 import { toast, Bounce } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
-const Chatbot = () => {
+const AstrologersTalk = () => {
+  const astroProfile = useSelector((store) => store.astro.astroProfile);
+
+  const { data } = astroProfile;
+  const info = data;
   const input = useRef();
-  const [result, setresult] = useState(["AstroBot: Hi"]);
+  const [result, setresult] = useState([info?.name + ": Hi"]);
   const [apiLimit, setapiLimit] = useState(1);
 
   const user = useSelector((store) => store.user);
   const form = useSelector((store) => store.configApp.form);
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const handlebot = () => {
-    dispatch(addBot());
+    navigate("/astroProfile/" + info?.name);
   };
 
   const handleSearch = async () => {
@@ -35,9 +43,9 @@ const Chatbot = () => {
       dispatch(addForm());
       return;
     }
-    if (apiLimit > 6) {
+    if (apiLimit > 4) {
       dispatch(addLimit(false));
-      toast.error("Please come tommorow Api limit excedd", {
+      toast.error("Please come tommorow Api limit exceded", {
         position: "top-right",
         autoClose: 1200,
         hideProgressBar: false,
@@ -51,7 +59,16 @@ const Chatbot = () => {
       return;
     }
 
-    const gptSearch = CHAT_BOT + input.current.value + `?`;
+    const gptSearch =
+      TALK_PROMPT +
+      "name=" +
+      info?.name +
+      "skills=" +
+      info?.skills +
+      "experience =" +
+      info?.exp +
+      "user input =" +
+      input.current.value;
 
     const data = await openai.chat.completions.create({
       messages: [{ role: "user", content: gptSearch }],
@@ -62,7 +79,7 @@ const Chatbot = () => {
     setresult([
       ...result,
       "You: " + input.current.value,
-      "AstroBot: " + Responce,
+      info?.name + ": " + Responce,
     ]);
     input.current.value = "";
 
@@ -70,12 +87,28 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="lg:pt-20 fixed w-full top-0 z-20 lg:mb-0 mb:20 pt-[20%] h-screen flex justify-center items-start  px-2 lg:px-16  bg-zinc-950 bg-opacity-85 w-12/12">
+    <div className="lg:pt-20 fixed w-full top-0 z-20 lg:mb-0 mb:20 pt-[20%] h-screen flex justify-center items-start  px-2 lg:px-16   w-12/12">
+      <img
+        alt="bg"
+        className="h-screen w-full md:scale-100 scale-x-[3] brightness-50 fixed top-0 left-0 -z-40"
+        src={bg}
+      ></img>
+
       <div className="lg:w-[50%] w-full rounded-xl overflow-hidden relative h-[75vh] lg:h-[80vh]">
-        <div className="w-full flex flex-row  justify-between items-center bg-opacity-95 bg-purple-700 py-3 lg:py-4 px-4 lg:px-10">
-          <span className="lg:text-2xl text-xl text-purple-200 font-semibold tracking-wide">
-            AstroBot
-          </span>
+        <div className="w-full flex flex-row justify-between items-center bg-opacity-95 bg-purple-700 py-3 lg:py-4 px-4 lg:px-10">
+          <div className="flex flex-row lg:gap-4 gap-2 justify-center items-center">
+            <div className="relative ">
+              <div className="w-16 h-16 rounded-full bg-purple-800 bg-opacity-85"></div>
+              <img
+                className="lg:w-16 absolute xl:left-[2px] bottom-0"
+                src={PROFILE_IMG + info?.picId}
+                alt="profile"
+              ></img>
+            </div>
+            <span className="lg:text-2xl text-xl text-purple-200 font-semibold tracking-wide">
+              {info?.name}
+            </span>
+          </div>
           <i
             className="text-xl lg:text-3xl text-purple-300 ri-close-fill cursor-pointer"
             onClick={handlebot}
@@ -117,4 +150,4 @@ const Chatbot = () => {
   );
 };
 
-export default Chatbot;
+export default AstrologersTalk;

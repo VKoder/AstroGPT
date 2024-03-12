@@ -11,63 +11,67 @@ import LoginForm from "./LoginForm";
 import Horoscope from "./Horoscope";
 import FootIcons from "./FootIcons";
 import Loading from "../utils/Loading";
+import AstrologersTalk from "./AstrologersTalk";
+import AstrologersCallPage from "./AstrologersCallPage";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
-  
     {
       path: "/",
       element: (
         <>
-        <Header/>
-        <FootIcons/>
+          <Header />
+          <FootIcons />
           <Outlet />
         </>
       ),
-      children:([
-        { 
-            path: "/",
-            element: <Hero />,
-          },
-          {
-            path: "/chat",
-            element: <Chat />,
-          },
-          {
-            path: "/call",
-            element: <Call />,
-          },
-          {
-            path: "/astroProfile/:id",
-            element: <AstroProfile />,
-          },
-          {
-            path:"/following",
-            element:<Following/>
-          },
-          {
-            path:"/chatbot",
-            element:<Chatbot/>
-          },
-          {
-            path:"/kundligpt",
-            element:<AstroKundli/>
-          },
-          {
-            path:"/horoscope/:id",
-            element:<Horoscope/>
-          },
-      ])
-       
-        
-        
+      children: [
+        {
+          path: "/",
+          element: <Hero />,
+        },
+        {
+          path: "/chat",
+          element: <Chat />,
+        },
+        {
+          path: "/call",
+          element: <Call />,
+        },
+        {
+          path: "/astroProfile/:id",
+          element: <AstroProfile />,
+        },
+        {
+          path: "/following",
+          element: <Following />,
+        },
+        {
+          path: "/chatbot",
+          element: <Chatbot />,
+        },
+        {
+          path: "/kundligpt",
+          element: <AstroKundli />,
+        },
+        {
+          path: "/horoscope/:id",
+          element: <Horoscope />,
+        },
+        {
+          path: "/astrologerschat/:id",
+          element: <AstrologersTalk />,
+        },
+        {
+          path: "/astrologerscall",
+          element: <AstrologersCallPage />,
+        },
+      ],
     },
     {
-      path:"/login",
-      element:<LoginForm/>
+      path: "/login",
+      element: <LoginForm />,
     },
-   
-   
   ]);
 
   return (

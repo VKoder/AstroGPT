@@ -65,9 +65,7 @@ const Card = ({ info }) => {
           {info?.tick && <span>
             <i className="lg:text-2xl md:text-xl opacity-70 text-lg text-[#9400D3] ri-verified-badge-fill"></i>
           </span>}
-          {
-            info?.label && <span>{info?.label}</span>
-          }
+      
         </div>
         <div className="">
           <button className="px-5 py-1 hover:bg-purple-500 hover:text-white  rounded-md  text-sm border text-purple-400  border-zinc-400">

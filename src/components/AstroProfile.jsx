@@ -9,6 +9,7 @@ import { addFollow, removeFollow } from "../store/followSlice";
 import { useState } from "react";
 import { addForm } from "../store/configAppSlice";
 import Chatbot from "./Chatbot";
+import bg from "../image/bg1.jpg";
 
 const AstroProfile = () => {
   const [follow, setfollow] = useState(false);
@@ -17,8 +18,8 @@ const AstroProfile = () => {
   useAstroProfile(id);
 
   const dispatch = useDispatch();
-  
-  const Bot = useSelector(store => store.configApp.Bot)
+
+  const Bot = useSelector((store) => store.configApp.Bot);
   const astroProfile = useSelector((store) => store.astro.astroProfile);
   const user = useSelector((store) => store.user);
 
@@ -40,7 +41,7 @@ const AstroProfile = () => {
         theme: "dark",
         transition: Bounce,
       });
-    
+
       dispatch(addForm());
       return; // Exit the function
     }
@@ -58,7 +59,7 @@ const AstroProfile = () => {
     });
 
     dispatch(addFollow(data));
-    setfollow(!follow)
+    setfollow(!follow);
   };
   const handleUnfollow = () => {
     toast("🔥 Unfollowed " + data?.name, {
@@ -72,29 +73,45 @@ const AstroProfile = () => {
       theme: "dark",
       transition: Bounce,
     });
-    dispatch(removeFollow(data))
-    setfollow(!follow)
-
+    dispatch(removeFollow(data));
+    setfollow(!follow);
   };
-  
+
+  // const handleTalk = ()=>{
+
+  // }
+
   return (
     <div className="lg:pt-24 pt-16 relative">
-         { Bot && <Chatbot/>}
-       <img alt="bg"
+      {Bot && <Chatbot />}
+      <img
+        alt="bg"
         className="h-screen w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40 "
-        src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"
+        src={bg}
       ></img>
       <div className="w-12/12  flex flex-col mx-4 lg:mx-16 ">
         <div className="flex flex-row justify-start lg:pb-0 pb-2 pl-2 lg:pl-4 items-center gap-0.5 lg:gap-1">
-          <Link to={"/"}> <span className="font-medium uppercase flex flex-row text-purple-300 items-center justify-center text-sm lg:text-base"><i className="pr-2 text-2xl ri-home-4-fill"></i>HOME</span></Link>
-          <span><i className="text-xl lg:text-2xl text-purple-200 ri-arrow-right-s-line"></i></span>
-          <span className="lg:text-xl text-base text-purple-200 font-normal">{data?.name}</span>
+          <Link to={"/"}>
+            {" "}
+            <span className="font-medium uppercase flex flex-row text-purple-300 items-center justify-center text-sm lg:text-base">
+              <i className="pr-2 text-2xl ri-home-4-fill"></i>HOME
+            </span>
+          </Link>
+          <span>
+            <i className="text-xl lg:text-2xl text-purple-200 ri-arrow-right-s-line"></i>
+          </span>
+          <span className="lg:text-xl text-base text-purple-200 font-normal">
+            {data?.name}
+          </span>
         </div>
         <div className="flex relative shadow-sm lg:gap-20 gap-8 w-full text-purple-300 shadow-zinc-700  transition-all hover:bg-opacity-55  bg-purple-950 bg-opacity-55 lg:flex-row flex-col px-8 py-8    lg:mt-5  rounded-2xl ">
           <div className="w-full lg:w-3/12  gap-4 flex-col h-full flex justify-center items-start">
             <div className="relative w-full  overflow-hidden h-full flex justify-center items-start">
-              {/* <img className="rounded-full lg:w-96 w-48" src={PROFILE_BG} alt="Bg"></img> */}
-              <div className="lg:w-96 lg:h-96 w-48 h-48 bg-purple-600 bg-opacity-80 rounded-full "></div>
+              <img
+                className="rounded-full lg:w-96 w-48"
+                src={PROFILE_BG}
+                alt="Bg"
+              ></img>
               <img
                 className="absolute top-0 md:-top-2 lg:top-0 w-48 lg:w-96 "
                 src={PROFILE_IMG + data?.picId}
@@ -135,11 +152,12 @@ const AstroProfile = () => {
               {data?.lang}
             </span>
             <span className="lg:text-2xl text-lg  font-semibold text-purple-200">
-              <i className="ri-shake-hands-fill pr-2 text-purple-300"></i>Exp: {data?.exp} Years
+              <i className="ri-shake-hands-fill pr-2 text-purple-300"></i>Exp:{" "}
+              {data?.exp} Years
             </span>
             <span className="lg:text-2xl pb-2 lg:py-0 text-lg  font-semibold text-purple-200">
-              <i className="ri-money-rupee-circle-fill pr-2 text-purple-300"></i>₹
-              {data?.callPrice}/min
+              <i className="ri-money-rupee-circle-fill pr-2 text-purple-300"></i>
+              ₹{data?.callPrice}/min
             </span>
             <div className="flex flex-row justify-center lg:justify-start py-4 lg:py-0 border-t lg:border-0 md:gap-3 gap-10 lg:gap-5 items-center">
               <span className=" text-xl  lg:text-2xl">
@@ -158,24 +176,35 @@ const AstroProfile = () => {
               </span>
             </div>
             <div className=" w-full flex flex-col lg:flex-row justify-start md:gap-3  gap-2 lg:gap-4 items-center">
-              <div className="py-1.5 lg:py-3 w-full lg:w-[40%] rounded-full border cursor-pointer shadow-md hover:bg-purple-700 hover:bg-opacity-50 transition-all border-purple-300 md:px-6 px-4 lg:px-8 flex flex-row justify-center lg:justify-between items-center">
-                <div className="w-1/12">
-                  <i className="ri-question-answer-fill text-4xl lg:text-3xl"></i>
+              <Link
+                className="w-full lg:w-[40%]"
+                to={"/astrologerschat/" + data?.name}
+              >
+                <div className="py-1.5 lg:py-3  rounded-full border cursor-pointer shadow-md hover:bg-purple-700 hover:bg-opacity-50 transition-all border-purple-300 md:px-6 px-4 lg:px-8 flex flex-row justify-center lg:justify-between items-center">
+                  <div className="w-1/12">
+                    <i className="ri-question-answer-fill text-4xl lg:text-3xl"></i>
+                  </div>
+                  <div className="w-10/12 flex flex-col justify-center lg:gap-1 gap-0.5 items-center">
+                    <span className="text-lg font-semibold">Start Chat</span>
+                    <span className="text-base font-normal">
+                      Wait time - 2m
+                    </span>
+                  </div>
                 </div>
-                <div className="w-10/12 flex flex-col justify-center lg:gap-1 gap-0.5 items-center">
-                  <span className="text-lg font-semibold">Start Chat</span>
-                  <span className="text-base font-normal">Wait time - 2m</span>
+              </Link>
+              <Link className="w-full lg:w-[40%]" to={"/astrologerscall"}>
+                <div className="py-1.5 lg:py-3 rounded-full border cursor-pointer shadow-md  hover:bg-purple-700 hover:bg-opacity-50 transition-all border-purple-300 md:px-6 px-4 lg:px-8 flex flex-row justify-center lg:justify-between items-center">
+                  <div className="w-1/12">
+                    <i className="ri-phone-fill text-4xl lg:text-3xl"></i>
+                  </div>
+                  <div className="w-10/12 flex flex-col justify-center lg:gap-1 gap-0.5 items-center">
+                    <span className="text-lg font-semibold">Start Call</span>
+                    <span className="text-base font-normal">
+                      Wait time - 2m
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="py-1.5 lg:py-3 w-full lg:w-[40%] rounded-full border cursor-pointer shadow-md  hover:bg-purple-700 hover:bg-opacity-50 transition-all border-purple-300 md:px-6 px-4 lg:px-8 flex flex-row justify-center lg:justify-between items-center">
-                <div className="w-1/12">
-                  <i className="ri-phone-fill text-4xl lg:text-3xl"></i>
-                </div>
-                <div className="w-10/12 flex flex-col justify-center lg:gap-1 gap-0.5 items-center">
-                  <span className="text-lg font-semibold">Start Call</span>
-                  <span className="text-base font-normal">Wait time - 2m</span>
-                </div>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="w-2/12 flex justify-end  absolute top-2 right-2">
@@ -184,15 +213,21 @@ const AstroProfile = () => {
             )}
           </div>
         </div>
+
         <div className="rounded-2xl text-purple-300 shadow-zinc-700  transition-all hover:bg-opacity-55  bg-purple-950 bg-opacity-55 flex flex-col lg:px-10 px-4 py-4 lg:py-10  w-full mt-4 my-20">
           <div className="w-full flex lg:gap-4 gap-1 flex-col">
             <span className="lg:text-3xl text-2xl uppercase  font-bold">
               About me
-              {data?.shortBio && <span className="lg:text-xl text-base text-purple-400 font-normal pl-2 italic ">
-                ({data?.shortBio})
-              </span>}
+              {data?.shortBio && (
+                <span className="lg:text-xl text-base text-purple-400 font-normal pl-2 italic ">
+                  ({data?.shortBio})
+                </span>
+              )}
             </span>
-            <span style={{wordSpacing:"2px"}} className="lg:text-lg text-sm tracking-wide font-normal text-gray-300">
+            <span
+              style={{ wordSpacing: "2px" }}
+              className="lg:text-lg text-sm tracking-wide font-normal text-gray-300"
+            >
               {data?.longBio}
             </span>
           </div>

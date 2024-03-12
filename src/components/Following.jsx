@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { PROFILE_IMG } from "../utils/constants";
 import { clearFollow, removeFollow } from "../store/followSlice";
 import { Link } from "react-router-dom";
+import bg from "../image/bg1.jpg"
 import Chatbot from "./Chatbot";
+import panditphone from "../image/pandit showing phone screen.png"
+import panditwelcome from "../image/pandit welcome.webp"
 
 const Following = () => {
   const dispatch = useDispatch();
@@ -25,14 +28,14 @@ const Following = () => {
       <img
         alt="bg"
         className="h-screen brightness-90 w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40"
-        src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"
+        src={bg}
       ></img>
       {data.length === 0 && 
         <div className="flex justify-center pt-20 items-center w-full h-full ">
             <div className=" flex flex-col  justify-center items-center w-full">
-                <img alt="unfollow" className="lg:w-[400px] w-72" src='https://cdni.iconscout.com/illustration/premium/thumb/male-pandit-working-on-laptop-2775580-2319301.png'></img>
+                <img alt="unfollow" className="lg:w-[400px] w-72" src={panditphone}></img>
                 <span className="text-lg lg:text-2xl text-purple-200 font-semibold tracking-wide pt-3 lg:pt-6 pb-2">You are not following anyone!</span>
-               <Link to="/chat"> <button className="tracking-wider cursor-pointer px-4 lg:px-6 font-medium text-sm lg:text-lg py-1 lg:py-1.5 transition-all  bg-purple-900 text-white border-2 hover:bg-transparent rounded-md uppercase  border-purple-900  ">Explore Astrologers</button></Link>
+               <Link to="/call"> <button className="tracking-wider cursor-pointer px-4 lg:px-6 font-medium text-sm lg:text-lg py-1 lg:py-1.5 transition-all  bg-purple-900 text-white border-2 hover:bg-transparent rounded-md uppercase  border-purple-900  ">Explore Astrologers</button></Link>
             </div>
       </div>
       }
@@ -40,7 +43,7 @@ const Following = () => {
         <>
             <div className="flex lg:px-20 px-4 justify-between lg:gap-20 h-screen flex-col lg:flex-row  items-center">
             <div className="lg:w-6/12 w-full md:flex hidden  justify-center lg:justify-start items-center">
-                <img className="lg:w-full w-72"  src="https://cdni.iconscout.com/illustration/premium/thumb/male-pandit-showing-mobile-2775575-2319298.png" alt="follow"></img>
+                <img className="lg:w-full w-72"  src={panditwelcome} alt="follow"></img>
             </div>
 
           <div className="lg:w-6/12 w-full flex bg-purple-950 bg-opacity-70 h-[80vh] lg:h-[80vh] mt-20 lg:mt-20  pt-4 rounded-xl flex-col  justify-start items-start">
