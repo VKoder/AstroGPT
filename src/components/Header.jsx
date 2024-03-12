@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../image/Logo.png";
+import Logo from "../image/Logo text.png";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useEffect } from "react";

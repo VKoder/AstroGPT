@@ -66,12 +66,13 @@ const Body = () => {
           path: "/astrologerscall",
           element: <AstrologersCallPage />,
         },
+        {
+          path: "/login",
+          element: <LoginForm />,
+        },
       ],
     },
-    {
-      path: "/login",
-      element: <LoginForm />,
-    },
+   
   ]);
 
   return (

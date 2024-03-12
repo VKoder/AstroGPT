@@ -80,7 +80,7 @@ const LoginForm = () => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user)
+
         updateProfile(user, {
           displayName: name.current.value,
         })
@@ -89,7 +89,6 @@ const LoginForm = () => {
             dispatch(
               addUser({ uid: uid, email: email, displayName: displayName })
             );
-            console.log({ uid: uid, email: email, displayName: displayName })
           })
           .catch((error) => {
             seterrorMessage(error.message);

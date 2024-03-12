@@ -17,7 +17,6 @@ const useHoroscope = (id) => {
             messages: [{ role: 'user', content: horoscope }],
             model: 'gpt-3.5-turbo',
         });
-        console.log(data?.choices?.[0]?.message?.content)
         dispatch(addHoroscope(data?.choices?.[0]?.message?.content))
     } 
     
