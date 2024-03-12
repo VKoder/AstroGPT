@@ -18,7 +18,6 @@ const CallCard = ({ info }) => {
     <div className="flex justify-start overflow-hidden shadow-sm shadow-zinc-700 hover:bg-purple-800 transition-all hover:bg-opacity-55 w-full bg-purple-950 bg-opacity-55  rounded-xl gap-4  px-2 py-2 items-start h-full flex-row">
       <div className="w-3/12 h-full  py-2  flex flex-col justify-start items-center">
         <div className="relative ">
-        {/* <img className="rounded-full " src={PROFILE_BG} alt="bg"></img> */}
         <div className="w-20 h-20 rounded-full bg-purple-800 bg-opacity-85"></div>
         <img
           className="lg:w-20 absolute xl:left-[2px] bottom-0"

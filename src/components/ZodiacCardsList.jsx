@@ -12,7 +12,6 @@ import Sagittarius from "../image/Sign/sign9.svg"
 import Capricorn from "../image/Sign/sign10.svg"
 import Aquarius from "../image/Sign/sign11.svg"
 import Pisces from "../image/Sign/sign12.svg"
-import zodiac from "../image/zodiac.png"
 import { Link } from 'react-router-dom'
 
 const ZodiacCardsList = () => {

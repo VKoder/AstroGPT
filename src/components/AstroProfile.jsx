@@ -93,7 +93,8 @@ const AstroProfile = () => {
         <div className="flex relative shadow-sm lg:gap-20 gap-8 w-full text-purple-300 shadow-zinc-700  transition-all hover:bg-opacity-55  bg-purple-950 bg-opacity-55 lg:flex-row flex-col px-8 py-8    lg:mt-5  rounded-2xl ">
           <div className="w-full lg:w-3/12  gap-4 flex-col h-full flex justify-center items-start">
             <div className="relative w-full  overflow-hidden h-full flex justify-center items-start">
-              <img className="rounded-full lg:w-96 w-48" src={PROFILE_BG} alt="Bg"></img>
+              {/* <img className="rounded-full lg:w-96 w-48" src={PROFILE_BG} alt="Bg"></img> */}
+              <div className="lg:w-96 lg:h-96 w-48 h-48 bg-purple-600 bg-opacity-80 rounded-full "></div>
               <img
                 className="absolute top-0 md:-top-2 lg:top-0 w-48 lg:w-96 "
                 src={PROFILE_IMG + data?.picId}
@@ -187,9 +188,9 @@ const AstroProfile = () => {
           <div className="w-full flex lg:gap-4 gap-1 flex-col">
             <span className="lg:text-3xl text-2xl uppercase  font-bold">
               About me
-              <span className="lg:text-xl text-base text-purple-400 font-normal pl-2 italic ">
+              {data?.shortBio && <span className="lg:text-xl text-base text-purple-400 font-normal pl-2 italic ">
                 ({data?.shortBio})
-              </span>
+              </span>}
             </span>
             <span style={{wordSpacing:"2px"}} className="lg:text-lg text-sm tracking-wide font-normal text-gray-300">
               {data?.longBio}
@@ -199,7 +200,7 @@ const AstroProfile = () => {
             <span className="lg:text-xl text-lg  font-bold">
               Problem Area:{" "}
             </span>
-            <span className="lg:text-lg text-base  lg:px-2 px-1 py-0.5 lg:py-2 rounded-3xl italic">
+            <span className="lg:text-base text-sm lg:tracking-wide tracking-wider  lg:px-2 px-1 py-0.5 lg:py-2 rounded-3xl italic">
               {data?.problemArea}
             </span>
           </div>
@@ -207,7 +208,7 @@ const AstroProfile = () => {
             {data?.album.map((img) => (
               <div
                 key={img?.url}
-                className="rounded-2xl bg-center  shadow-purple-600 shadow-md lg:w-[300px] w-full h-[200px] lg:h-[280px]  overflow-hidden"
+                className="rounded-2xl bg-center  shadow-purple-600 shadow-sm lg:shadow-md lg:w-[300px] w-full h-[200px] lg:h-[280px]  overflow-hidden"
               >
                 <img className="w-full" src={img?.url} alt="img"></img>
               </div>

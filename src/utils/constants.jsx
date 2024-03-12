@@ -42,6 +42,8 @@ export const OPEN_AI_KEY = process.env.REACT_APP_OPEN_AI_KEY;
 
 export const CHAT_BOT = process.env.REACT_APP_BOT_PROMPT;
 
+export const HOROSCOPE = process.env.REACT_APP_HOROSCOPE_PROMPT;
+
 export const ASTRO_KUNDLI_PROMPT = `<span class="text-purple-300 mb-2 text-lg lg:text-2xl w-full text-center lg:font-semibold font-medium tracking-wider lg:tracking-wide">Hey, I am an AstroKundli integrated in AstroGPT, created by Sir Vivek Khule, a visionary mind behind AstroGPT. Please note that these readings may not be fully accurate.</span><br><br>
 <div class="flex flex-col lg:flex-row lg:justify-between justify-start items-start lg:items-start">
  <div class="flex flex-col justify-start w-full lg:w-5/12">

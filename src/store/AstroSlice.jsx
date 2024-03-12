@@ -6,6 +6,7 @@ const AstroSlice = createSlice({
         chatList:null,
         callList:null,
         astroProfile:null,
+        horoscope: null,
     },
     reducers:{
         addChat:(state,action)=>{
@@ -16,8 +17,11 @@ const AstroSlice = createSlice({
         },
         addAstroProfile:(state,action)=>{
             state.astroProfile = action.payload;
+        },
+        addHoroscope:(state, action)=>{
+            state.horoscope = action.payload;
         }
     }
 })
 export default AstroSlice.reducer;
-export const {addChat, addCall,addAstroProfile} = AstroSlice.actions;
+export const {addChat, addCall,addAstroProfile , addHoroscope} = AstroSlice.actions;

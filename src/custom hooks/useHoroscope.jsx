@@ -1,22 +1,29 @@
 import { useEffect } from 'react'
 import openai from '../utils/openai';
+import { HOROSCOPE } from '../utils/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { addHoroscope } from '../store/AstroSlice';
 
 const useHoroscope = (id) => {
 
-    // const fetch = async (id) =>{
+    const dispatch = useDispatch()
 
-    //     const horoscope = 'Give me todays horoscope of '+ id + 'in ascepts of love, carrer and etc'
+  
 
-    //     const data = await openai.chat.completions.create({
-    //         messages: [{ role: 'user', content: horoscope }],
-    //         model: 'gpt-3.5-turbo',
-    //     });
-    //     console.log(data)
-    // }
+    const fetch = async (id) =>{
+        const horoscope = (HOROSCOPE + id);
 
-    // useEffect(()=>{
-    //     fetch();
-    // },[])
+        const data = await openai.chat.completions.create({
+            messages: [{ role: 'user', content: horoscope }],
+            model: 'gpt-3.5-turbo',
+        });
+        console.log(data?.choices?.[0]?.message?.content)
+        dispatch(addHoroscope(data?.choices?.[0]?.message?.content))
+    } 
+    
+    useEffect(()=>{
+        fetch();
+    },[])
 
 }
 

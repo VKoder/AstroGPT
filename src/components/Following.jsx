@@ -10,7 +10,7 @@ const Following = () => {
 
   const data = useSelector((store) => store.follow.follow);
   const Bot = useSelector(store => store.configApp.Bot)
-  console.log(data);
+
 
   const handleUnfollow = () => {
     dispatch(clearFollow());

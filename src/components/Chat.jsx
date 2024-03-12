@@ -35,7 +35,7 @@ const Chat = () => {
     return (
         <div  className="relative w-12/12 ">
              { Bot && <Chatbot/>}
-            <img alt="bg" className="h-screen w-full md:scale-100 scale-x-[3] fixed top-0 left-0 -z-40" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"></img>
+            <img alt="bg" className="h-screen w-full md:scale-100 scale-x-[3] brightness-50 fixed top-0 left-0 -z-40" src="https://kamleshyadav.com/html/astrology/version-3/assets/images/bg1.jpg"></img>
            <div className="lg:pt-6 pt-3 px-4 lg:px-20 md:px-16  flex flex-col justify-center  items-start">
             <div className="w-full flex lg:flex-row flex-col justify-between mt-20 lg:mb-4  mb-3 items-start lg:items-center">
                 <span className="text-3xl lg:text-4xl lg:py-0  text-purple-200 font-bold">{lang[Langkey].chat}</span>
