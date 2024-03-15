@@ -11,7 +11,7 @@ const Horoscope = () => {
   const { id } = useParams();
   // call the gpt api in useEffect by using custom hook
 
-  // useHoroscope(id)
+  useHoroscope(id)
 
   const Bot = useSelector((store) => store.configApp.Bot);
   const horoscope = useSelector((store) => store.astro.horoscope);
