@@ -65,6 +65,23 @@ const lang = {
     ASTROBOT: "ASTRO BOT",
     LOGIN:"LOGIN",
     KUNDLIGPT: "KUNDLI GPT",
+    yourHoroscope:"Your Horoscope",
+    todaysHoroof:" Todays Horoscope of",
+    horobottomtitle1:"Today’s horoscope for zodiac signs",
+    horobottomtitle2:"Unlock Your Cosmic Destiny with AstroGPT Horoscopes",
+    horobottomdesc1:" Welcome to the realm where stars align and destinies unfold. Dive into the celestial mysteries with AstroGPT Horoscopes, where each prediction is a glimpse into the cosmic tapestry of your life. Our astrological insights, powered by cutting-edge GPT technology, guidance and illumination as you navigate the celestial currents. Step into the world of AstroGPT Horoscopes and discover the wisdom written in the stars.",
+    horobottomtitle3:"About AstroGPT Horoscope Prediction:",
+    horobottomdesc2:"Our AstroGPT Horoscope Prediction brings the timeless wisdom of astrology into the digital age. Crafted by our advanced GPT models, our horoscopes offer personalized insights into your past, present, and future. While our predictions may not be grounded in traditional astrological practices, they serve as guiding lights in your journey through life's ever-changing landscape. Explore the cosmic whispers with AstroGPT Horoscopes and unlock the secrets of the universe",
+    horobottomtitle4:"How Today's Horoscope Can Guide You:",
+    horopoint1:" Gain insights into potential opportunities and challenges that may arise throughout your day.",
+    horopoint2:" Receive personalized guidance based on your zodiac sign, helping you make informed decisions.",
+    horopoint3:" Find clarity and direction in various aspects of your life, including love, career, health, and personal growth.",
+    horopoint4:"Use your horoscope as a celestial compass to navigate life's twists and turns with confidence.",
+    horopoint5:"Embrace the wisdom of the stars and uncover the hidden meanings behind daily events.",
+    horopoint6:"  Stay attuned to the cosmic energies surrounding you and make the most of each moment.",
+    
+astroKundli : "Astro Kundli",
+astroBot : "Astro Bot",
   },
   hindi: {
     signIn: "दाखिल करें",
@@ -132,6 +149,8 @@ const lang = {
     ASTROBOT: "एस्ट्रो बॉट",
     KUNDLIGPT: "कुंडली GPT",
     LOGIN:"लॉगिन",
+    astroKundli: "ज्योतिष कुंडली",
+astroBot: "ज्योतिष बॉट"
 
   },
   marathi: {
@@ -200,6 +219,8 @@ const lang = {
     ASTROBOT: "ज्योतिष बॉट",
     KUNDLIGPT: "कुंडली GPT",
     LOGIN:"लॉगिन",
+    astroKundli: "ज्योतिष कुंडली",
+astroBot: "ज्योतिष बॉट",
   },
   spanish: {
     signIn: "Iniciar sesión",
@@ -268,6 +289,9 @@ const lang = {
     ASTROBOT: "ASTRO BOT",
     KUNDLIGPT: "KUNDLI GPT",
     LOGIN:"INICIAR SESIÓN",
+    astroKundli: "Kundli Astro",
+astroBot: "Bot Astro",
+    
   },
   japanese: {
     signIn: "サインイン",
@@ -335,6 +359,8 @@ const lang = {
     ASTROBOT: "アストロボット",
     KUNDLIGPT: "クンドリ GPT",
     LOGIN:"ログイン",
+    astroKundli: "アストロクンドリ",
+astroBot: "アストロボット",
   },
   telugu: {
     signIn: "సైన్ ఇన్",
@@ -402,6 +428,8 @@ const lang = {
     ASTROBOT: "ఆస్ట్రో బాట్",
     KUNDLIGPT: "కుండ్లి GPT",
     LOGIN:"లాగిన్",
+    astroKundli: "జ్యోతిష్ కుండలి",
+astroBot: "జ్యోతిష్ బాట్",
   },
 };
 

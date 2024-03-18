@@ -1,12 +1,13 @@
 import React from "react";
 
 const HoroscopeBottom = () => {
+  // const LangKey = useSelecto(store => store.configApp.lang)
   return (
     <div className="w-full mt-6 lg:mt-20">
       <div className="flex w-full  flex-col justify-center items-center">
         <div className="flex justify-center items-center w-full flex-col ">
           <span className="lg:text-4xl text-2xl text-center lg:font-semibold  font-[600] text-purple-300 pb-1.5 lg:pb-3 tracking-wider opacity-90 lg:tracking-wide">
-            Today’s horoscope for zodiac signs
+          Today’s horoscope for zodiac signs
           </span>
           <span className="pt-1 lg:pb-3 pb-1.5 text-center text-purple-300 text-base lg:text-xl tracking-wider lg:tracking-wide">
             (Unlock Your Cosmic Destiny with AstroGPT Horoscopes)

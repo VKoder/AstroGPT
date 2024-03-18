@@ -160,7 +160,7 @@ const AstroKundli = () => {
                 type="datetime-local"
                 ref={time}
               ></input>
-              <span className={spanCSS}>Birth Time</span>
+              <span className={spanCSS}>Birth Date & Time</span>
             </div>
           </div>
 

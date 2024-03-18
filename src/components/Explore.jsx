@@ -27,10 +27,10 @@ const Explore = () => {
           </span>
           <div className="flex flex-row gap-3">
             <button className="lg:px-5 px-3 hover:bg-transparent border-2 rounded-full hover:shadow-inner   shadow-purple-950  ring-purple-100 shadow-lg hover:shadow-purple-700 border-purple-700 transition-all lg:my-2 my-1 py-1 lg:py-1.5  text-white bg-purple-700  uppercase tracking-wider font-semibold text-sm lg:text-base">
-              {lang[Langkey].explore}
+              {lang[Langkey].astroBot}
             </button>
             <button className="lg:px-5 px-3 hover:bg-transparent border-2 rounded-full hover:shadow-inner   shadow-purple-950  ring-purple-100 shadow-lg hover:shadow-purple-700 border-purple-700 transition-all lg:my-2 my-1 py-1 lg:py-1.5  text-white bg-purple-700  uppercase tracking-wider font-semibold text-sm lg:text-base">
-              AstroKundli
+              {lang[Langkey].astroKundli}
             </button>
           </div>
         </div>

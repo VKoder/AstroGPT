@@ -6,6 +6,7 @@ import Chatbot from "./Chatbot";
 import HoroscopeBottom from "./HoroscopeBottom";
 import bg from "../image/bg1.jpg";
 import panditreading from "../image/pandit reading.webp";
+import lang from "../utils/langConstants";
 
 const Horoscope = () => {
   const { id } = useParams();
@@ -14,7 +15,9 @@ const Horoscope = () => {
   useHoroscope(id)
 
   const Bot = useSelector((store) => store.configApp.Bot);
+  const LangKey = useSelector(store => store.configApp.lang)
   const horoscope = useSelector((store) => store.astro.horoscope);
+
 
   return (
     <div className="relative flex-col justify-center items-center mx-4 lg:mx-24 flex w-12/12">
@@ -28,7 +31,7 @@ const Horoscope = () => {
         <div className="flex justify-center items-center  w-full flex-col ">
           <span className="lg:text-4xl w-full text-2xl text-center lg:font-semibold  font-[600] text-purple-300 pb-1.5 lg:pb-3 tracking-wider opacity-90 lg:tracking-wide">
             {" "}
-            Your Horoscope
+          {lang[LangKey].yourHoroscope}
           </span>
           <img
             alt="line"
@@ -48,10 +51,11 @@ const Horoscope = () => {
             <div className="lg:w-9/12 lg:pt-0 pt-6 w-full">
               <div className="flex justify-start h-full items-start flex-col">
                 <span className="text-xl lg:text-3xl font-medium lg:font-semibold tracking-wider lg:tracking-wide text-purple-300 pb-0.5 lg:pb-2 border-dotted border-yellow-500 border-b-2">
-                  Todays Horoscope of {id} :
+                  {lang[LangKey].todaysHoroof} {id} :
                 </span>
                 <span className="lg:text-base text-sm tracking-wider font-normal pt-2 lg:pt-4 lg:tracking-wide text-purple-100">
                   {horoscope}
+                  
                 </span>
               </div>
             </div>
