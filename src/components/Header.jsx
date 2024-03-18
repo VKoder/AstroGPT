@@ -11,13 +11,16 @@ import { clearFollow, removeFollow } from "../store/followSlice";
 import { MULTI_LANG } from "../utils/constants";
 import { addBot, addForm, addLang, removeForm } from "../store/configAppSlice";
 import LoginForm from "./LoginForm";
+import lang from "../utils/langConstants";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
   const form = useSelector((store) => store.configApp.form);
+  const Langkey = useSelector((store)=> store.configApp.lang);
+
   const navigate = useNavigate();
   const liCSS =
-    "font-semibold uppercase tracking-wide text-sm px-2 cursor-pointer  pb-2";
+    "font-semibold uppercase tracking-wide text-sm cursor-pointer hover:border-orange-400 border-b-2 border-transparent lii pb-1";
   const dispatch = useDispatch();
 
   const handleform = () => {
@@ -70,7 +73,7 @@ const Header = () => {
   }
   return (
     <>
-      <div className=" z-50 fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  py-1 flex-row flex items-center justify-between  px-2 md:px-10 ">
+      <div className=" z-50  fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  py-1 flex-row flex items-center justify-between  px-2 md:px-10 ">
         <div>
           <Link to={"/"}>
             {" "}
@@ -81,36 +84,36 @@ const Header = () => {
             ></img>
           </Link>
         </div>
-        <div className="text-white hidden lg:block">
-          <Link to={"/chat"}>
+        <div className="text-white gap-5 justify-center items-center hidden lg:flex">
+          <Link to={"/chat"} className={liCSS }>
             {" "}
-            <span className={liCSS }>Chat</span>
+            <span >{lang[Langkey].CHAT}</span>
           </Link>
-          <Link to={"/call"}>
+          <Link to={"/call"} className={liCSS}>
             {" "}
-            <span className={liCSS}>Call</span>
+            <span >{lang[Langkey].CALL}</span>
           </Link>
           {!user ? (
             <span onClick={handleform} className={liCSS}>
-              Login
+              {lang[Langkey].LOGIN}
             </span>
           ) : (
             <span onClick={handleSignOut} className={liCSS}>
-              Signout
+              {lang[Langkey].SIGNOUT}
             </span>
           )}
 
           <Link to={"/following"} className={liCSS}>
-            <span>Following</span>
+            <span>{lang[Langkey].FOLLOWING}</span>
           </Link>
           
-            <span  className={liCSS} onClick={handlebot}>Chat bot</span>
+            <span  className={liCSS} onClick={handlebot}>{lang[Langkey].ASTROBOT}</span>
           
           <Link to={"/kundligpt"} className={liCSS}>
-            <span>Kundli GPT</span>
+            <span>{lang[Langkey].KUNDLIGPT}</span>
           </Link>
           {
-            user && <span>{user?.displayName}</span>
+            // user && <span>{user?.displayName}</span>
           }
         </div>
 

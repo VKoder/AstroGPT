@@ -45,7 +45,7 @@ const LoginForm = () => {
         toast.success("Welcome to AstroGPT!", {
           position: "top-center",
           autoClose: 1000,
-          hideProgressBar: false,
+          hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: false,
           draggable: true,
@@ -96,7 +96,7 @@ const LoginForm = () => {
         toast.success("Welcome to AstroGPT!", {
           position: "top-center",
           autoClose: 10000,
-          hideProgressBar: false,
+          hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: false,
           draggable: true,

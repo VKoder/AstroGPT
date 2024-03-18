@@ -4,6 +4,7 @@ import openai from "./../utils/openai";
 import React, { useRef, useState } from "react";
 import { addBot, addForm, addLimit } from "../store/configAppSlice";
 import { toast, Bounce } from "react-toastify";
+import logo from "../image/Logo.png"
 
 const Chatbot = () => {
   const input = useRef();
@@ -72,10 +73,14 @@ const Chatbot = () => {
   return (
     <div className="lg:pt-20 fixed w-full top-0 z-20 lg:mb-0 mb:20 pt-[20%] h-screen flex justify-center items-start  px-2 lg:px-16  bg-zinc-950 bg-opacity-85 w-12/12">
       <div className="lg:w-[50%] w-full rounded-xl overflow-hidden relative h-[75vh] lg:h-[80vh]">
-        <div className="w-full flex flex-row  justify-between items-center bg-opacity-95 bg-purple-700 py-3 lg:py-4 px-4 lg:px-10">
-          <span className="lg:text-2xl text-xl text-purple-200 font-semibold tracking-wide">
-            AstroBot
-          </span>
+        <div className="w-full flex flex-row  h-[10vh] justify-between items-center bg-opacity-95 bg-purple-700 py-3 lg:py-4 px-4 lg:px-6">
+          
+          <div className="flex justify-start items-center">
+            <img className="xl:w-16 w-10 lg:w-14" src={logo} alt="logo"></img>
+            <span className="lg:text-2xl text-purple-200 font-semibold xl:text-2xl text-xl">AstroGPT</span>
+          </div>
+
+
           <i
             className="text-xl lg:text-3xl text-purple-300 ri-close-fill cursor-pointer"
             onClick={handlebot}

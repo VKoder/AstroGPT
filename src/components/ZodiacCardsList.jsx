@@ -15,8 +15,13 @@ import Pisces from "../image/Sign/sign12.svg";
 import { Link } from "react-router-dom";
 import kundli from "../image/kundli rishi.webp";
 import load from "../image/loading.png";
+import lang from "../utils/langConstants";
+import { useSelector } from "react-redux";
 
 const ZodiacCardsList = () => {
+
+  const LangKey = useSelector(store => store.configApp.lang)
+
   return (
     <div className="flex flex-col w-full lg:mt-0 lg:mb-10  justify-center items-center h-full relative">
       <img
@@ -32,57 +37,57 @@ const ZodiacCardsList = () => {
       <div className="flex justify-center lg:gap-10 items-center lg:py-3  w-full h-full flex-wrap">
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Aries"}>
           {" "}
-          <ZodiacCard name={"Aries"} value={"Aries"} img={Aries} />
+          <ZodiacCard name={lang[LangKey].Aries} value={"Aries"} img={Aries} />
         </Link>
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Aquarius"}>
           {" "}
-          <ZodiacCard name={"Aquarius"} value={"Aquarius"} img={Aquarius} />
+          <ZodiacCard name={lang[LangKey].Aquarius} value={"Aquarius"} img={Aquarius} />
         </Link>
       </div>
       <div className="flex justify-evenly lg:gap-32 items-center lg:py-3  w-full h-full flex-wrap">
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Taurus"}>
           {" "}
-          <ZodiacCard name={"Taurus"} value={"Taurus"} img={Taurus} />
+          <ZodiacCard name={lang[LangKey].Taurus} value={"Taurus"} img={Taurus} />
         </Link>
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Gemini"}>
-          <ZodiacCard name={"Gemini"} value={"Gemini"} img={Gemini} />
+          <ZodiacCard name={lang[LangKey].Gemini} value={"Gemini"} img={Gemini} />
         </Link>
       </div>
       <div className="flex justify-between items-center lg:py-3 w-full h-full flex-wrap">
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Cancer"}>
-          <ZodiacCard name={"Cancer"} value={"Cancer"} img={Cancer} />
+          <ZodiacCard name={lang[LangKey].Cancer} value={"Cancer"} img={Cancer} />
         </Link>
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Leo"}>
-          <ZodiacCard name={"Leo"} value={"Leo"} img={Leo} />
+          <ZodiacCard name={lang[LangKey].Leo} value={"Leo"} img={Leo} />
         </Link>
       </div>
       <div className="flex justify-between items-center lg:py-3  w-full h-full flex-wrap">
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Virgo"}>
-          <ZodiacCard name={"Virgo"} value={"Virgo"} img={Virgo} />
+          <ZodiacCard name={lang[LangKey].Virgo} value={"Virgo"} img={Virgo} />
         </Link>
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Libra"}>
           {" "}
-          <ZodiacCard name={"Libra"} value={"Libra"} img={Libra} />
+          <ZodiacCard name={lang[LangKey].Libra} value={"Libra"} img={Libra} />
         </Link>
       </div>
       <div className="flex justify-evenly lg:gap-32 items-center lg:py-3  w-full h-full flex-wrap">
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Scorpio"}>
           {" "}
-          <ZodiacCard name={"Scorpio"} value={"Scorpio"} img={Scorpio} />
+          <ZodiacCard name={lang[LangKey].Scorpio} value={"Scorpio"} img={Scorpio} />
         </Link>
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Pisces"}>
           {" "}
-          <ZodiacCard name={"Pisces"} value={"Pisces"} img={Pisces} />
+          <ZodiacCard name={lang[LangKey].Pisces} value={"Pisces"} img={Pisces} />
         </Link>
       </div>
       <div className="flex justify-center items-center py-3  lg:gap-10 w-full h-full flex-wrap">
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Capricorn"}>
-          <ZodiacCard name={"Capricorn"} value={"Capricorn"} img={Capricorn} />
+          <ZodiacCard name={lang[LangKey].Capricorn} value={"Capricorn"} img={Capricorn} />
         </Link>
         <Link className="lg:w-3/12 w-full" to={"/horoscope/Sagittarius"}>
           {" "}
           <ZodiacCard
-            name={"Sagittarius"}
+            name={lang[LangKey].Sagittarius}
             value={"Sagittarius"}
             img={Sagittarius}
           />

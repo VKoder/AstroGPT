@@ -5,6 +5,7 @@ import TopAstro from "./TopAstro";
 import SignSearch from "./SignSearch";
 import Chatbot from "./Chatbot";
 import bg from "../image/bg1.jpg"
+import Coming from "./Coming";
 
 const Hero =() => {
 
@@ -33,6 +34,7 @@ const Hero =() => {
           
             <TopAstro list={topAstro}/>
             <SignSearch/>
+            <Coming/>
         </div>
     )
 }

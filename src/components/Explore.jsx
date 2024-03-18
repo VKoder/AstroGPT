@@ -12,17 +12,17 @@ const Explore = () => {
     <div className="w-12/12  flex flex-col">
       <div className="relative lg:h-screen pt-36 lg:pt-16 mx-6 md:px-10 gap-10  flex flex-col lg:flex-row justify-center items-center w-12/12">
         <div className=" lg:w-6/12 w-full lg:pl-20 z-10 lg:flex flex lg:justify-start justify-center items-center lg:items-start lg:pt-28 flex-col h-full text-white">
-          <span className="text-2xl uppercase lg:text-start text-center tracking-widest lg:text-6xl w-full font-medium text-purple-100">
-            {lang[Langkey].welcome}
+          <span className="text-2xl uppercase lg:text-start text-center tracking-widest lg:text-4xl w-full font-medium text-purple-100">
+          {lang[Langkey].welcome}
           </span>
-          <span className="lg:text-[85px]  tracking-wide text-4xl font-bold py-3 text-purple-300">
+          <span className="lg:text-[85px]  tracking-wide text-4xl font-bold pb-5 pt-3 text-purple-300">
             {" "}
-            {lang[Langkey].astroGPT}
+          {lang[Langkey].astroGPT}
           </span>
-          <span className="text-xl uppercase lg:text-start text-center  tracking-[4.5px]  lg:text-2xl w-full  font-medium text-purple-100">
-            Your Horoscope Realm
+          <span className="text-xl uppercase lg:text-start text-center  tracking-[3px]  lg:text-xl w-full  font-medium text-purple-100">
+          {lang[Langkey].finger}
           </span>
-          <span className="lg:py-4 pt-1.5 lg:pt-3 text-sm lg:text-base tracking-wider  font-normal w-full lg:w-[80%] lg:items-start lg:text-left items-center flex text-center italic text-zinc-300">
+          <span className="lg:py-2 pt-0.5 lg:pt-3 text-sm lg:text-base tracking-wider  font-normal w-full lg:w-[80%] lg:items-start lg:text-left items-center flex text-center italic text-zinc-300">
             {lang[Langkey].loginDescription}
           </span>
           <div className="flex flex-row gap-3">
