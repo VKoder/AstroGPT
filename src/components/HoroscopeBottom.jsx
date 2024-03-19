@@ -1,16 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import lang from "../utils/langConstants";
 
 const HoroscopeBottom = () => {
-  // const LangKey = useSelecto(store => store.configApp.lang)
+  const LangKey = useSelector(store => store.configApp.lang)
   return (
     <div className="w-full mt-6 lg:mt-20">
       <div className="flex w-full  flex-col justify-center items-center">
         <div className="flex justify-center items-center w-full flex-col ">
           <span className="lg:text-4xl text-2xl text-center lg:font-semibold  font-[600] text-purple-300 pb-1.5 lg:pb-3 tracking-wider opacity-90 lg:tracking-wide">
-          Today’s horoscope for zodiac signs
+        {lang[LangKey].horobottomtitle1}
           </span>
           <span className="pt-1 lg:pb-3 pb-1.5 text-center text-purple-300 text-base lg:text-xl tracking-wider lg:tracking-wide">
-            (Unlock Your Cosmic Destiny with AstroGPT Horoscopes)
+            ({lang[LangKey].horobottomtitle2})
           </span>
           <img
             alt="line"
@@ -20,69 +22,51 @@ const HoroscopeBottom = () => {
         </div>
 
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
-          Welcome to the realm where stars align and destinies unfold. Dive into
-          the celestial mysteries with AstroGPT Horoscopes, where each
-          prediction is a glimpse into the cosmic tapestry of your life. Our
-          astrological insights, powered by cutting-edge GPT technology, offer
-          guidance and illumination as you navigate the celestial currents. Step
-          into the world of AstroGPT Horoscopes and discover the wisdom written
-          in the stars.
+        {lang[LangKey].horobottomdesc1}
         </span>
       </div>
 
       <div className="w-full flex justify-center items-center my-6 flex-col">
         <span className="py-2 lg:px-0 px-4 text-purple-300 font-semibold text-xl lg:text-2xl pb-2 border-dotted border-yellow-500 border-b-2 tracking-wide">
-          About AstroGPT Horoscope Prediction:
+        {lang[LangKey].horobottomtitle3}
         </span>
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
-          Our AstroGPT Horoscope Prediction brings the timeless wisdom of
-          astrology into the digital age. Crafted by our advanced GPT models,
-          our horoscopes offer personalized insights into your past, present,
-          and future. While our predictions may not be grounded in traditional
-          astrological practices, they serve as guiding lights in your journey
-          through life's ever-changing landscape. Explore the cosmic whispers
-          with AstroGPT Horoscopes and unlock the secrets of the universe
+          {lang[LangKey].horobottomdesc2}
         </span>
       </div>
 
       <div className="w-full flex justify-center items-center my-6 flex-col">
         <span className="py-2 lg:px-0 px-4 text-purple-300 font-semibold text-xl lg:text-2xl pb-2 border-dotted border-yellow-500 border-b-2 tracking-wide ">
-          How Today's Horoscope Can Guide You:
+        {lang[LangKey].horobottomtitle4}
         </span>
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
           <li>
-            Gain insights into potential opportunities and challenges that may
-            arise throughout your day.
+        {lang[LangKey].horopoint1}
           </li>
         </span>
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
           <li>
-            Receive personalized guidance based on your zodiac sign, helping you
-            make informed decisions.
+          {lang[LangKey].horopoint2}
           </li>
         </span>
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
           <li>
-            Find clarity and direction in various aspects of your life,
-            including love, career, health, and personal growth.
+          {lang[LangKey].horopoint3}
           </li>
         </span>
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
           <li>
-            Use your horoscope as a celestial compass to navigate life's twists
-            and turns with confidence.
+          {lang[LangKey].horopoint4}
           </li>
         </span>
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
           <li>
-            Embrace the wisdom of the stars and uncover the hidden meanings
-            behind daily events.
+          {lang[LangKey].horopoint5}
           </li>
         </span>
         <span className="lg:w-11/12 w-full text-base lg:text-lg tracking-wider lg:tracking-wide lg:justify-start justify-center items-center px-4 lg:items-start lg:py-6 py-3 text-purple-200">
           <li>
-            Stay attuned to the cosmic energies surrounding you and make the
-            most of each moment.
+          {lang[LangKey].horopoint6}
           </li>
         </span>
       </div>

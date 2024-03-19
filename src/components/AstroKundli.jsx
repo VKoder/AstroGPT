@@ -10,6 +10,7 @@ import Chatbot from "./Chatbot";
 import bg from "../image/bg1.jpg";
 import kundli from "../image/kundli rishi.webp";
 import handbg from "../image/hand_bg.png";
+import lang from "../utils/langConstants";
 
 const AstroKundli = () => {
   const user = useSelector((store) => store.user);
@@ -23,6 +24,7 @@ const AstroKundli = () => {
   const [gender, setGender] = useState();
   const [SelectedLanguage, setSelectedLanguage] = useState("English");
   const [result, setresult] = useState();
+  const LangKey = useSelector(store => store.configApp.lang)
 
   const handleSearch = async () => {
     if (!user) {
@@ -130,7 +132,7 @@ const AstroKundli = () => {
         <div className="lg:w-8/12  w-12/12">
           <div className="mb-8 flex justify-start flex-col items-center">
             <span className="lg:text-3xl text-2xl text-center lg:font-semibold  font-[600] text-purple-300 pb-1.5 lg:pb-2 tracking-wider opacity-90 lg:tracking-normal">
-              Get Astro Insights
+              {lang[LangKey].getAstroInsights}
             </span>
             <img
               alt="line"
@@ -141,17 +143,17 @@ const AstroKundli = () => {
           <div className={maindivCSS}>
             <div className={divCSS}>
               <input className={inputCSS} type="text" ref={name}></input>
-              <span className={spanCSS}>Name</span>
+              <span className={spanCSS}>{lang[LangKey].inputname}</span>
             </div>
             <div className={divCSS}>
               <input className={inputCSS} type="text" ref={locality}></input>
-              <span className={spanCSS}>Birth Place</span>
+              <span className={spanCSS}>{lang[LangKey].birthPlace}</span>
             </div>
           </div>
           <div className={maindivCSS}>
             <div className={divCSS}>
               <input className={inputCSS} type="text" ref={district}></input>
-              <span className={spanCSS}>Birth District</span>
+              <span className={spanCSS}>{lang[LangKey].birthDistrict}</span>
             </div>
 
             <div className={divCSS}>
@@ -160,7 +162,7 @@ const AstroKundli = () => {
                 type="datetime-local"
                 ref={time}
               ></input>
-              <span className={spanCSS}>Birth Date & Time</span>
+              <span className={spanCSS}>{lang[LangKey].birthTime}</span>
             </div>
           </div>
 
@@ -168,7 +170,7 @@ const AstroKundli = () => {
             <div className={divCSS}>
               <div className="flex lg:flex-row flex-col px-3 py-2  lg:border-purple-900 lg:border rounded-xl lg:bg-purple-950 bg-opacity-55 ">
                 <span className="lg:text-lg text-sm font-semibold text-purple-300 px-2 lg:px-4 uppercase pb-2">
-                  Gender
+                  {lang[LangKey].gender}
                 </span>
                 <div className="w-4/12 flex flex-row">
                   <input
@@ -183,7 +185,7 @@ const AstroKundli = () => {
                     className="lg:text-base text-sm font-semibold text-purple-300 pl-2 uppercase"
                     htmlFor="male"
                   >
-                    Male
+                    {lang[LangKey].male}
                   </label>
                 </div>
                 <div className="w-4/12 flex flex-row">
@@ -198,14 +200,15 @@ const AstroKundli = () => {
                     className="lg:text-base text-sm  font-semibold text-purple-300 pl-2 uppercase"
                     htmlFor="female"
                   >
-                    Female
+                         {lang[LangKey].female}
+                  
                   </label>
                 </div>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:px-3 px-2 py-2 justify-start gap-4 lg:gap-10 lg:border-purple-900 lg:border rounded-xl lg:bg-purple-950 bg-opacity-55 w-[45%] lg:w-6/12">
               <span className="lg:text-lg text-sm font-semibold text-purple-300 px-1 lg:px-3 uppercase">
-                Language
+                {lang[LangKey].language}
               </span>
               <select
                 className="text-purple-200 px-1 py-0.5 rounded-lg bg-purple-900 bg-opacity-90"

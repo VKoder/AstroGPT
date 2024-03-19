@@ -12,11 +12,11 @@ const Horoscope = () => {
   const { id } = useParams();
   // call the gpt api in useEffect by using custom hook
 
-  useHoroscope(id)
+  // useHoroscope(id)
 
   const Bot = useSelector((store) => store.configApp.Bot);
   const LangKey = useSelector(store => store.configApp.lang)
-  const horoscope = useSelector((store) => store.astro.horoscope);
+  // const horoscope = useSelector((store) => store.astro.horoscope);
 
 
   return (
@@ -54,8 +54,8 @@ const Horoscope = () => {
                   {lang[LangKey].todaysHoroof} {id} :
                 </span>
                 <span className="lg:text-base text-sm tracking-wider font-normal pt-2 lg:pt-4 lg:tracking-wide text-purple-100">
-                  {horoscope}
-                  
+                  {/* {horoscope} */}
+                  hi
                 </span>
               </div>
             </div>

@@ -7,12 +7,14 @@ import bg from "../image/bg1.jpg"
 import Chatbot from "./Chatbot";
 import panditphone from "../image/pandit showing phone screen.png"
 import panditwelcome from "../image/pandit welcome.webp"
+import lang from "../utils/langConstants";
 
 const Following = () => {
   const dispatch = useDispatch();
 
   const data = useSelector((store) => store.follow.follow);
   const Bot = useSelector(store => store.configApp.Bot)
+  const LangKey = useSelector(store => store.configApp.lang)
 
 
   const handleUnfollow = () => {
@@ -34,8 +36,8 @@ const Following = () => {
         <div className="flex justify-center pt-20 items-center w-full h-full ">
             <div className=" flex flex-col  justify-center items-center w-full">
                 <img alt="unfollow" className="lg:w-[400px] w-72" src={panditphone}></img>
-                <span className="text-lg lg:text-2xl text-purple-200 font-semibold tracking-wide pt-3 lg:pt-6 pb-2">You are not following anyone!</span>
-               <Link to="/call"> <button className="tracking-wider cursor-pointer px-4 lg:px-6 font-medium text-sm lg:text-lg py-1 lg:py-1.5 transition-all  bg-purple-900 text-white border-2 hover:bg-transparent rounded-md uppercase  border-purple-900  ">Explore Astrologers</button></Link>
+                <span className="text-lg lg:text-2xl text-purple-200 font-semibold tracking-wide pt-3 lg:pt-6 pb-2">{lang[LangKey].notfollowing}</span>
+               <Link to="/call"> <button className="tracking-wider cursor-pointer px-4 lg:px-6 font-medium text-sm lg:text-lg py-1 lg:py-1.5 transition-all  bg-purple-900 text-white border-2 hover:bg-transparent rounded-md uppercase  border-purple-900  ">{lang[LangKey].expFollow}</button></Link>
             </div>
       </div>
       }
@@ -48,8 +50,8 @@ const Following = () => {
 
           <div className="lg:w-6/12 w-full flex bg-purple-950 bg-opacity-70 h-[80vh] lg:h-[80vh] mt-20 lg:mt-20  pt-4 rounded-xl flex-col  justify-start items-start">
             <div className="w-full px-5 flex justify-between items-center pb-4">
-              <span className="lg:text-2xl text-lg font-semibold tracking-wider lg:tracking-wide uppercase  text-purple-200">Following</span>
-                <button className="lg:px-3 px-2 py-1.5 rounded-lg bg-purple-700 lg:text-base text-sm text-zinc-100 " onClick={handleClear}>Clear Follow</button>
+              <span className="lg:text-2xl text-lg font-semibold tracking-wider lg:tracking-wide uppercase  text-purple-200">{lang[LangKey].following}</span>
+                <button className="lg:px-3 px-2 py-1.5 rounded-lg bg-purple-700 lg:text-base text-sm text-zinc-100 " onClick={handleClear}>{lang[LangKey].clearFollow}</button>
             </div>
             <div className="bg-purple-700 bg-opacity-80 h-full overflow-y-scroll py-2 px-1.5 lg:px-3 w-full">
             {data?.map((data) => (
@@ -83,7 +85,7 @@ const Following = () => {
                     className="bg-purple-300 lg:px-4 px-2 py-1 text-sm lg:text-base  lg:py-2 rounded-lg hover:bg-purple-200  transition-all font-medium cursor-pointer text-zinc-700"
                     onClick={handleUnfollow}
                   >
-                    Unfollow
+                    {lang[LangKey].unfollow}
                   </span>
                 </div>
               </div>
