@@ -20,7 +20,7 @@ const Header = () => {
 
   const navigate = useNavigate();
   const liCSS =
-    "font-semibold uppercase tracking-wide text-sm cursor-pointer hover:border-orange-400 border-b-2 border-transparent lii pb-1";
+    "font-semibold uppercase tracking-wide text-sm 2xl:text-lg lg:text-sm cursor-pointer hover:border-orange-400 border-b-2 border-transparent lii pb-1";
   const dispatch = useDispatch();
 
   const handleform = () => {
@@ -73,18 +73,18 @@ const Header = () => {
   }
   return (
     <>
-      <div className=" z-50  fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  py-1 flex-row flex items-center justify-between  px-2 md:px-10 ">
+      <div className=" z-50  fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  py-1 flex-row flex items-center justify-between px-3 2xl:px-10 lg:px-6 md:px-10 ">
         <div>
           <Link to={"/"}>
             {" "}
             <img
-              className="w-32 py-3 md:w-44 lg:w-48"
+              className="w-32  lg:py-3 py-3 2xl:py-7 2xl:w-72 md:w-44 lg:w-48"
               src={Logo}
               alt="Logo"
             ></img>
           </Link>
         </div>
-        <div className="text-white gap-5 justify-center items-center hidden lg:flex">
+        <div className="text-white lg:gap-5 gap-5 2xl:gap-8 justify-center items-center hidden lg:flex">
           <Link to={"/chat"} className={liCSS }>
             {" "}
             <span >{lang[Langkey].CHAT}</span>

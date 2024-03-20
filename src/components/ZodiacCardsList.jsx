@@ -23,68 +23,68 @@ const ZodiacCardsList = () => {
   const LangKey = useSelector(store => store.configApp.lang)
 
   return (
-    <div className="flex flex-col w-full lg:mt-0 lg:mb-10  justify-center items-center h-full relative">
+    <div className="flex flex-col w-full lg:mt-0 lg:mb-10 2xl:mb-16  justify-center items-center h-full relative">
       <img
         alt="cycle"
-        className="hidden lg:block absolute  w-80 opacity-95"
+        className="hidden lg:block absolute 2xl:w-96 lg:w-80 opacity-95"
         src={kundli}
       ></img>
       <img
         alt="cycle"
-        className="absolute hidden lg:block -z-10 opacity-55 hand w-[450px]"
+        className="absolute hidden lg:block -z-10 opacity-55 hand 2xl:w-[550px] lg:w-[450px]"
         src={load}
       ></img>
       <div className="flex justify-center lg:gap-10 items-center lg:py-3  w-full h-full flex-wrap">
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Aries"}>
+        <Link className="lg:w-3/12 2xl:w-[20%] w-full" to={"/horoscope/Aries"}>
           {" "}
           <ZodiacCard name={lang[LangKey].Aries} value={"Aries"} img={Aries} />
         </Link>
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Aquarius"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Aquarius"}>
           {" "}
           <ZodiacCard name={lang[LangKey].Aquarius} value={"Aquarius"} img={Aquarius} />
         </Link>
       </div>
       <div className="flex justify-evenly lg:gap-32 items-center lg:py-3  w-full h-full flex-wrap">
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Taurus"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Taurus"}>
           {" "}
           <ZodiacCard name={lang[LangKey].Taurus} value={"Taurus"} img={Taurus} />
         </Link>
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Gemini"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Gemini"}>
           <ZodiacCard name={lang[LangKey].Gemini} value={"Gemini"} img={Gemini} />
         </Link>
       </div>
       <div className="flex justify-between items-center lg:py-3 w-full h-full flex-wrap">
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Cancer"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Cancer"}>
           <ZodiacCard name={lang[LangKey].Cancer} value={"Cancer"} img={Cancer} />
         </Link>
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Leo"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Leo"}>
           <ZodiacCard name={lang[LangKey].Leo} value={"Leo"} img={Leo} />
         </Link>
       </div>
       <div className="flex justify-between items-center lg:py-3  w-full h-full flex-wrap">
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Virgo"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Virgo"}>
           <ZodiacCard name={lang[LangKey].Virgo} value={"Virgo"} img={Virgo} />
         </Link>
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Libra"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Libra"}>
           {" "}
           <ZodiacCard name={lang[LangKey].Libra} value={"Libra"} img={Libra} />
         </Link>
       </div>
       <div className="flex justify-evenly lg:gap-32 items-center lg:py-3  w-full h-full flex-wrap">
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Scorpio"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Scorpio"}>
           {" "}
           <ZodiacCard name={lang[LangKey].Scorpio} value={"Scorpio"} img={Scorpio} />
         </Link>
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Pisces"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Pisces"}>
           {" "}
           <ZodiacCard name={lang[LangKey].Pisces} value={"Pisces"} img={Pisces} />
         </Link>
       </div>
       <div className="flex justify-center items-center py-3  lg:gap-10 w-full h-full flex-wrap">
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Capricorn"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Capricorn"}>
           <ZodiacCard name={lang[LangKey].Capricorn} value={"Capricorn"} img={Capricorn} />
         </Link>
-        <Link className="lg:w-3/12 w-full" to={"/horoscope/Sagittarius"}>
+        <Link className="lg:w-3/12  2xl:w-[20%]  w-full" to={"/horoscope/Sagittarius"}>
           {" "}
           <ZodiacCard
             name={lang[LangKey].Sagittarius}
