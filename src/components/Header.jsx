@@ -20,7 +20,7 @@ const Header = () => {
 
   const navigate = useNavigate();
   const liCSS =
-    "font-semibold uppercase tracking-wide text-sm 2xl:text-lg lg:text-sm cursor-pointer hover:border-orange-400 border-b-2 border-transparent lii pb-1";
+    "font-semibold focus:text-purple-300  hover:text-purple-300 uppercase tracking-wide text-sm 2xl:text-lg lg:text-sm cursor-pointer focus:border-purple-400 hover:border-purple-400 border-b-2 border-transparent lii pb-1";
   const dispatch = useDispatch();
 
   const handleform = () => {
@@ -73,7 +73,7 @@ const Header = () => {
   }
   return (
     <>
-      <div className=" z-50  fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-90  py-1 flex-row flex items-center justify-between px-3 2xl:px-10 lg:px-6 md:px-10 ">
+      <div className=" z-50  fixed w-full mb-20 bg-gradient-to-b from-black  bg-opacity-100  py-1 flex-row flex items-center justify-between px-3 2xl:px-10 lg:px-6 md:px-10 ">
         <div>
           <Link to={"/"}>
             {" "}
@@ -106,8 +106,10 @@ const Header = () => {
           <Link to={"/following"} className={liCSS}>
             <span>{lang[Langkey].FOLLOWING}</span>
           </Link>
-          
-            <span  className={liCSS} onClick={handlebot}>{lang[Langkey].ASTROBOT}</span>
+          <Link to={"/about"} className={liCSS}>
+            <span>{lang[Langkey].ABOUT}</span>
+          </Link>
+            
           
           <Link to={"/kundligpt"} className={liCSS}>
             <span>{lang[Langkey].KUNDLIGPT}</span>
@@ -120,7 +122,7 @@ const Header = () => {
 
         <div>
           <select
-            className="lg:pl-1 pl-0.5 cursor-pointer lg:text-base text-sm py-1 lg:py-2 lg:mx-2 mx-0.5 text-purple-200 bg-purple-800 rounded-md bg-opacity-80"
+            className="lg:pl-1 pl-0.5 cursor-pointer lg:text-base text-sm py-1 lg:py-1.5 lg:mx-2 mx-0.5 text-purple-200 bg-purple-800 rounded-md bg-opacity-80"
             onChange={handleLang}
           >
             {MULTI_LANG.map((lang) => (

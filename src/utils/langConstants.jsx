@@ -104,6 +104,7 @@ const lang = {
     following: "Following",
     clearFollow: "Clear Follow",
     unfollow: "Unfollow",
+    ABOUT: "ABOUT",
   },
   hindi: {
     signIn: "दाखिल करें",
@@ -206,6 +207,7 @@ const lang = {
     following: "अनुसरण",
     clearFollow: "स्पष्ट अनुसरण",
     unfollow: "अनुसरण छोड़ें",
+    ABOUT: "बारे में",
   },
   marathi: {
     signIn: "साइन इन करा",
@@ -309,6 +311,7 @@ const lang = {
     following: "अनुसरण",
     clearFollow: "अनुसरण साफ करा",
     unfollow: "अनुसरण काढा",
+    ABOUT: "बद्दल",
   },
   spanish: {
     signIn: "Iniciar sesión",
@@ -393,6 +396,7 @@ const lang = {
     following: "Siguiendo",
     clearFollow: "Limpiar Seguir",
     unfollow: "Dejar de seguir",
+    ABOUT: "ACERCA DE",
   },
   japanese: {
     signIn: "サインイン",
@@ -498,6 +502,7 @@ const lang = {
     following: "フォロー中",
     clearFollow: "フォローをクリア",
     unfollow: "フォロー解除",
+    ABOUT: "約",
   },
   telugu: {
     signIn: "సైన్ ఇన్",
@@ -596,6 +601,7 @@ const lang = {
     following: "అనుసరిస్తున్నారు",
     clearFollow: "అనుసరణను నిలిపివేయండి",
     unfollow: "అనుసరణ రద్దు",
+    ABOUT: "గురించి",
   },
 };
 

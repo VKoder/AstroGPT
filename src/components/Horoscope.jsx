@@ -12,12 +12,11 @@ const Horoscope = () => {
   const { id } = useParams();
   // call the gpt api in useEffect by using custom hook
 
-  // useHoroscope(id)
+  useHoroscope(id);
 
   const Bot = useSelector((store) => store.configApp.Bot);
-  const LangKey = useSelector(store => store.configApp.lang)
-  // const horoscope = useSelector((store) => store.astro.horoscope);
-
+  const LangKey = useSelector((store) => store.configApp.lang);
+  const horoscope = useSelector((store) => store.astro.horoscope);
 
   return (
     <div className="relative flex-col justify-center items-center mx-4 lg:mx-24 flex w-12/12">
@@ -31,7 +30,7 @@ const Horoscope = () => {
         <div className="flex justify-center items-center  w-full flex-col ">
           <span className="lg:text-4xl w-full text-2xl text-center lg:font-semibold  font-[600] text-purple-300 pb-1.5 lg:pb-3 tracking-wider opacity-90 lg:tracking-wide">
             {" "}
-          {lang[LangKey].yourHoroscope}
+            {lang[LangKey].yourHoroscope}
           </span>
           <img
             alt="line"
@@ -54,8 +53,7 @@ const Horoscope = () => {
                   {lang[LangKey].todaysHoroof} {id} :
                 </span>
                 <span className="lg:text-base text-sm tracking-wider font-normal pt-2 lg:pt-4 lg:tracking-wide text-purple-100">
-                  {/* {horoscope} */}
-                  hi
+                  {horoscope}
                 </span>
               </div>
             </div>

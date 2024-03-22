@@ -13,6 +13,7 @@ import FootIcons from "./FootIcons";
 import Loading from "../utils/Loading";
 import AstrologersTalk from "./AstrologersTalk";
 import AstrologersCallPage from "./AstrologersCallPage";
+import About from "./About";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
@@ -70,6 +71,11 @@ const Body = () => {
           path: "/login",
           element: <LoginForm />,
         },
+        {
+          path: "/about",
+          element: <About />,
+        },
+
       ],
     },
    

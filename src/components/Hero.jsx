@@ -6,9 +6,12 @@ import SignSearch from "./SignSearch";
 import Chatbot from "./Chatbot";
 import bg from "../image/bg1.jpg";
 import Coming from "./Coming";
+import logo from "../image/Logo.png"
+import { addBot } from "../store/configAppSlice";
 
 const Hero = () => {
   const [topAstro, settopAstro] = useState();
+  const dispatch = useDispatch()
 
   const Bot = useSelector((store) => store.configApp.Bot);
 
@@ -23,6 +26,10 @@ const Hero = () => {
     fetchData();
   }, []);
 
+  const handleBot = ()=>{
+    dispatch(addBot())
+  }
+
   return (
     <div className="w-12/12  relative lg:px-0 2xl:px-44">
       <img
@@ -35,6 +42,9 @@ const Hero = () => {
 
       <TopAstro list={topAstro} />
       <SignSearch />
+      <div className=" lg:bottom-5 2xl:bottom-6 hidden md:block fixed 2xl:right-4 lg:right-7">
+        <img src={logo} alt="logo" className="w-24 cursor-pointer" onClick={handleBot}></img>
+      </div>
       <Coming />
     </div>
   );
