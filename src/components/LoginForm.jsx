@@ -114,7 +114,6 @@ const LoginForm = () => {
   };
 
   const handleform =()=>{
-   
     dispatch(addForm())
   }
 

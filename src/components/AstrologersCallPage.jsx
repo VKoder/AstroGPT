@@ -5,7 +5,7 @@ import bg from "../image/bg1.jpg";
 
 const AstrologersCallPage = () => {
   return (
-    <div className="w-12/12 relative">
+    <div className="w-12/12 lg:pt-0 pt-20 relative">
       <img
         alt="bg"
         className="h-screen w-full md:scale-100 scale-x-[3] brightness-50 fixed top-0 left-0 -z-40"

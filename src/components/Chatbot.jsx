@@ -23,6 +23,7 @@ const Chatbot = () => {
   };
 
   const handleSearch = async () => {
+    
     if (!user) {
       toast.error("Please Login to Continue", {
         position: "top-right",
@@ -55,13 +56,14 @@ const Chatbot = () => {
       return;
     }
 
-    const gptSearch = CHAT_BOT + input.current.value + `?`;
+    const gptSearch = CHAT_BOT + input.current.value + `?`; 
 
     const data = await openai.chat.completions.create({
       messages: [{ role: "user", content: gptSearch }],
       model: "gpt-3.5-turbo",
     });
     const Responce = data?.choices?.[0]?.message?.content;
+    console.log(data)
 
     setresult([
       ...result,

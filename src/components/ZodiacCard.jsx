@@ -9,7 +9,7 @@ const ZodiacCard = ({name,value,img}) => {
             </div>
             <div className='w-7/12 flex flex-col justify-start items-start'>
             <span className='lg:text-[20px] 2xl:text-3xl text-lg uppercase font-semibold tracking-wider lg:racking-wide text-zinc-200'>{name}</span>
-            <span className='text-zinc-300 lg:text-sm 2xl:text-xl text-sm pt-1.5 tracking-wider lg:racking-wide uppercase'>Mar 21 - Apr 21</span>
+            <span className='text-zinc-300 lg:text-sm 2xl:text-xl text-sm pt-1.5 tracking-wider lg:racking-wide uppercase'>{value}</span>
             </div>
         </div>
     </div>

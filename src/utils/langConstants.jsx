@@ -12,8 +12,7 @@ const lang = {
     astroGPT: "AstroGPT",
     finger: "A Finger Pointing to Reality",
     gptSearch: "GPT Search",
-    loginDescription:
-      "Connect with astrologers, chat seamlessly, get personalized horoscopes with Astrobot. Unlock insights with Kundli from AstroKundli",
+    loginDescription:"Connect with astrologers, chat, and get personalized horoscopes with Astrobot. Unlock insights with AstroKundli",
     explore: "AstroBot",
     chat: "Chat with Astrologers",
     call: "Call to Astrologers",

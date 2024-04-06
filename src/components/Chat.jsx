@@ -6,6 +6,7 @@ import { useState } from "react";
 import lang from "../utils/langConstants";
 import Chatbot from "./Chatbot";
 import bg from "../image/bg1.jpg"
+import Error from "./Error";
 
 const Chat = () => {
     
@@ -19,6 +20,7 @@ const Chat = () => {
     useChat()
     const chatList = useSelector(store => store.astro.chatList)
     if (!chatList) return <ShimmerList/>
+   
 
 
     const handleSearch = (e) => {

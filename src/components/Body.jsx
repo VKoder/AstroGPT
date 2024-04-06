@@ -14,6 +14,8 @@ import Loading from "../utils/Loading";
 import AstrologersTalk from "./AstrologersTalk";
 import AstrologersCallPage from "./AstrologersCallPage";
 import About from "./About";
+import Error from "./Error";
+import Footer from "./Footer";
 
 const Body = () => {
   const appLayout = createBrowserRouter([
@@ -24,6 +26,7 @@ const Body = () => {
           <Header />
           <FootIcons />
           <Outlet />
+          <Footer/>
         </>
       ),
       children: [
@@ -74,6 +77,10 @@ const Body = () => {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/error",
+          element: <Error />,
         },
 
       ],

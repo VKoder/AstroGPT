@@ -4,6 +4,7 @@ import ZodiacContainer from "./ZodiacContainer";
 import handbg from "../image/hand_bg.png";
 import hand from "../image/hand.png";
 import { addBot } from "../store/configAppSlice";
+import { Link } from "react-router-dom";
 
 const Explore = () => {
   const Langkey = useSelector((store) => store.configApp.lang);
@@ -34,9 +35,9 @@ const Explore = () => {
             <button className="lg:px-5 2xl:px-8 2xl:py-3 px-3 hover:bg-transparent border-2 rounded-full hover:shadow-inner   shadow-purple-950  ring-purple-100 shadow-lg hover:shadow-purple-700 border-purple-700 transition-all lg:my-2 my-1 py-1 lg:py-1.5  text-white bg-purple-700  uppercase tracking-wide font-semibold 2xl:text-lg text-sm lg:text-lg" onClick={handlebot}>
               {lang[Langkey].astroBot}
             </button>
-            <button className="lg:px-5 2xl:px-8 2xl:py-3 px-3 hover:bg-transparent border-2 rounded-full hover:shadow-inner   shadow-purple-950  ring-purple-100 shadow-lg hover:shadow-purple-700 border-purple-700 transition-all lg:my-2 my-1 py-1 lg:py-1.5  text-white bg-purple-700  uppercase tracking-wide font-semibold 2xl:text-lg text-sm lg:text-lg">
+           <Link to={"/kundligpt"}><button className="lg:px-5 2xl:px-8 2xl:py-3 px-3 hover:bg-transparent border-2 rounded-full hover:shadow-inner   shadow-purple-950  ring-purple-100 shadow-lg hover:shadow-purple-700 border-purple-700 transition-all lg:my-2 my-1 py-1 lg:py-1.5  text-white bg-purple-700  uppercase tracking-wide font-semibold 2xl:text-lg text-sm lg:text-lg">
               {lang[Langkey].astroKundli}
-            </button>
+            </button></Link> 
           </div>
         </div>
         <div className="relative flex justify-center h-[35vh] items-center lg:pt-0 lg:w-6/12 lg:h-screen">
