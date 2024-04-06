@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex justify-center items-center flex-col gap-2">
             <img alt="logo" className="lg:w-32 w-16 rounded-3xl md:w-28" src={logo}></img>
             <span className="font-extrabold lg:text-lg md:text-lg text-base text-gray-50 tracking-wide">
-              AstroGPT
+            AstroGPT
             </span>
             <div className="flex justify-evenly md:gap-4 gap-3 lg:gap-5 items-center flex-row">
               <Link

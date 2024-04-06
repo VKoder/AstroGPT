@@ -11,7 +11,7 @@ const AstrologersCallPage = () => {
         className="h-screen w-full md:scale-100 scale-x-[3] brightness-50 fixed top-0 left-0 -z-40"
         src={bg}
       ></img>
-      <div className="flex justify-center lg:pt-28 items-center w-full h-full ">
+      <div className="flex justify-center  h-screen lg:pt-28 items-center w-full  ">
         <div className=" flex flex-col  justify-center items-center w-full">
           <img alt="unfollow" className="lg:w-[400px] w-72" src={pandit}></img>
           <span className="text-lg lg:text-2xl text-purple-200 font-semibold tracking-wide pt-3 lg:pt-6 pb-2">
