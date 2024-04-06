@@ -9,6 +9,19 @@
 
 
 
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center; width:100%;">
+  
+  <img width="400px" src="https://github.com/VKoder/AstroGPT/blob/main/src/image/Snapshots/Home.png" />
+  <img width="400px" src="https://github.com/VKoder/AstroGPT/blob/main/src/image/Snapshots/Kundli.png" />
+    <img width="400px" src="https://github.com/VKoder/AstroGPT/blob/main/src/image/Snapshots/AstroBot.png" />
+  <img width="400px" src="https://github.com/VKoder/AstroGPT/blob/main/src/image/Snapshots/Horoscope.png" />
+    <img width="400px" src="https://github.com/VKoder/AstroGPT/blob/main/src/image/Snapshots/List.png" />
+
+  <img width="400px" src="https://github.com/VKoder/AstroGPT/blob/main/src/image/Snapshots/Profile.png" />
+
+
+</div>
+
 
 <!-- Features -->
 <br></br>
