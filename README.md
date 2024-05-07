@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://astro-gpt-eta.vercel.app/static/media/Logo%20text.f6597f7e623631bb4827.png" style="width:300px"></img>
+  <img src="https://astro-gpt-eta.vercel.app/static/media/Logo%20text.f6597f7e623631bb4827.png" style="width:310px"></img>
 </div>
 
 <!-- PROJECT DESCRIPTION -->
