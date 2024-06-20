@@ -2,7 +2,6 @@
   <img src="https://astro-gpt-eta.vercel.app/static/media/Logo%20text.f6597f7e623631bb4827.png" style="width:310px"></img>
 </div>
 <!-- PROJECT DESCRIPTION -->
-
 > ## Introducing AstroGPT, your ultimate astrology app featuring personalized Kundli, daily horoscope, live chat with astrologers, and an intuitive chatbot powered by ChatGPT. Follow your favorite astrologers, receive personalized insights, and explore the cosmos like never before. Discover the universe's secrets with AstroGPT! Welcome to AstroGPT, the pinnacle of astrology applications, boasting a high-performance and scalable architecture, enriched with the extraordinary capabilities of ChatGPT.
 
 
